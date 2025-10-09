@@ -1,0 +1,25 @@
+project:
+  type: book
+
+book:
+  title: "Memorias de Matemáticas para la IA"
+  author: "Laura Herrera"
+  date: today
+  chapters:
+    - index.qmd
+    - complejos-potenciacion-radicacion.qmd  # Tema 1
+  page-navigation: true
+
+format:
+  pdf:
+    pdf-engine: pdflatex   # Computer Modern
+    toc: true
+    number-sections: true
+  html:
+    theme: cosmo
+    number-sections: true
+
+execute:
+  echo: true
+  warning: false
+  error: false

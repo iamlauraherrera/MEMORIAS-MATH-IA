@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Render Memorias (PDF)",
+      "type": "shell",
+      "command": "quarto render",
+      "group": { "kind": "build", "isDefault": true }
+    },
+    {
+      "label": "Render Memorias (HTML)",
+      "type": "shell",
+      "command": "quarto render --to html",
+      "group": "build"
+    }
+  ]
+}

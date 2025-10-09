@@ -1,0 +1,28 @@
+---
+title: "Potenciación y radicación de números complejos"
+---
+
+## De Moivre (raíces cuartas)
+
+Si \(z = r e^{i\theta}\), las raíces cuartas son
+\[
+w_k = r^{1/4} e^{i\frac{\theta + 2\pi k}{4}},\ k=0,1,2,3.
+\]
+
+```{python}
+import numpy as np, cmath, matplotlib.pyplot as plt
+def roots4(z):
+    r, th = abs(z), cmath.phase(z)
+    return [(r**0.25)*np.exp(1j*((th+2*np.pi*k)/4)) for k in range(4)]
+
+z = 1 + 1j*np.sqrt(3)  # ejemplo
+W = roots4(z)
+print([complex(round(w.real,6), round(w.imag,6)) for w in W])
+print("errores:", [abs(w**4 - z) for w in W])
+
+plt.figure()
+plt.scatter([z.real],[z.imag], s=80, marker='*', label='z')
+plt.scatter([w.real for w in W],[w.imag for w in W], label='raíces cuartas')
+plt.axhline(0); plt.axvline(0); plt.gca().set_aspect('equal','box')
+plt.legend(); plt.title("Raíces cuartas de z"); plt.show()
+```
