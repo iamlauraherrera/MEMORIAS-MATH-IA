@@ -1,43 +1,59 @@
 name: Publish Quarto Book to GitHub Pages
 on:
-  push:
-    branches: [ "main" ]
-  workflow_dispatch:
+push:
+branches: [ "main" ]
+workflow_dispatch:
+
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+contents: read
+pages: write
+id-token: write
+
 
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+group: "pages"
+cancel-in-progress: false
+
 
 jobs:
-  build-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+build-deploy:
+runs-on: ubuntu-latest
+steps:
+- name: Checkout
+uses: actions/checkout@v4
 
-      - name: Setup Quarto
-        uses: quarto-dev/quarto-actions/setup@v2  # instala Quarto
-        with:
-          version: "stable"
 
-      # Si usas R/Python, instala aquí dependencias
+- name: Setup Quarto
+uses: quarto-dev/quarto-actions/setup@v2
+with:
+version: "stable"
 
-      - name: Render
-        uses: quarto-dev/quarto-actions/render@v2  # Render del proyecto
 
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+# (Opcional) Instala dependencias si usas Python/R
+# - name: Setup Python
+# uses: actions/setup-python@v5
+# with:
+# python-version: '3.x'
+# - name: Install Python deps
+# run: |
+# pip install -r requirements.txt
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site  # carpeta de salida por defecto
 
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+- name: Render
+uses: quarto-dev/quarto-actions/render@v2
+
+
+- name: Setup Pages
+uses: actions/configure-pages@v5
+
+
+- name: Upload artifact
+uses: actions/upload-pages-artifact@v3
+with:
+path: _site
+
+
+- name: Deploy to GitHub Pages
+id: deployment
+uses: actions/deploy-pages@v4
