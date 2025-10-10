@@ -1,0 +1,222 @@
+---
+title: "Álgebra lineal"
+---
+```{python}
+import numpy as np
+import matplotlib.pyplot as plt
+np.set_printoptions(precision=4, suppress=True)
+```
+
+## Introducción a las matrices
+
+Una **matriz** $A \in \mathbb{R}^{m \times n}$ es un arreglo rectangular de números reales (o complejos).  
+- **Filas**: índice $i=1,\dots,m$.  
+- **Columnas**: índice $j=1,\dots,n$.  
+- **Entrada**: $a_{ij}$ en la fila $i$, columna $j$.  
+- **Matriz identidad** $I_n$: diagonal de unos, resto ceros.  
+- **Matriz traspuesta**: $(A^\top)_{ij}=a_{ji}$.
+
+
+Este fragmento de código crea una matriz A de tamaño 2×3 usando numpy. La matriz contiene números flotantes. Luego, imprime la matriz y muestra su forma (dimensiones)
+```{python}
+A = np.array([[2., -1., 0.],
+              [1.,  3., 2.]], dtype=float)   # 2x3
+print("A =\n", A)
+print("Forma de A:", A.shape)
+```
+
+---
+
+## Operaciones básicas
+
+Para matrices del mismo tamaño: **suma** y **resta** elemento a elemento.  
+Para tamaños compatibles: **producto matricial** $(AB)_{ij}=\sum_k a_{ik}b_{kj}$.  
+Otras operaciones: **traspuesta** $A^\top$, **traza** $\mathrm{tr}(A)$, **determinante** $\det(A)$ (cuadradas), **rango**.
+
+```{python}
+B = np.array([[0.,  4.,  1.],
+              [3., -2., -1.]], dtype=float)
+
+print("A+B =\n", A + B)
+print("A-B =\n", A - B)
+
+# Para producto, ajustamos tamaños: C (3x2) compatible con A (2x3)
+C = np.array([[1., 0.],
+              [2., 1.],
+              [0., 3.]], dtype=float)
+
+print("A @ C =\n", A @ C)          # (2x3)@(3x2) -> (2x2)
+print("Traspuesta de A:\n", A.T)
+
+# Ejemplos con matriz cuadrada para traza, det y rango
+M = np.array([[2., 1.],
+              [1., 3.]], dtype=float)
+print("M =\n", M)
+print("traza(M) =", np.trace(M))
+print("det(M)   =", np.linalg.det(M))
+print("rango(M) =", np.linalg.matrix_rank(M))
+```
+
+---
+
+## Matriz inversa
+
+Una matriz cuadrada $A \in \mathbb{R}^{n\times n}$ es **invertible** si existe $A^{-1}$ tal que $AA^{-1}=A^{-1}A=I_n$.  
+Una condición necesaria y suficiente es $\det(A) \neq 0$.
+
+```{python}
+A2 = np.array([[4., 2.],
+               [1., 3.]], dtype=float)
+
+detA2 = np.linalg.det(A2)
+print("det(A2) =", detA2)
+
+if abs(detA2) > 1e-12:
+    A2_inv = np.linalg.inv(A2)
+    print("A2^{-1} =\n", A2_inv)
+    # Verificación
+    I_check = A2 @ A2_inv
+    print("A2 @ A2^{-1} =\n", I_check)
+else:
+    print("A2 no es invertible.")
+```
+
+---
+
+## Resolución de sistemas de ecuaciones lineales
+
+Dado $A \in \mathbb{R}^{n\times n}$ e $b \in \mathbb{R}^n$, resolver $A x = b$.
+
+```{python}
+A3 = np.array([[3., 1., -1.],
+               [2., 4.,  1.],
+               [0., -2., 5.]], dtype=float)
+
+b3 = np.array([4., 1., 3.], dtype=float)
+
+x = np.linalg.solve(A3, b3)
+print("Solución x =", x)
+
+# Verificación: ||A x - b||_2 pequeño
+resid = np.linalg.norm(A3 @ x - b3)
+print("||A x - b||_2 =", resid)
+```
+
+---
+
+## Valores y vectores propios
+
+Un **valor propio** $\lambda$ y **vector propio** $v \neq 0$ satisfacen $A v = \lambda v$.  
+Los autovalores son las raíces de $\det(A - \lambda I)=0$.
+
+```{python}
+A4 = np.array([[2., 1.],
+               [1., 3.]], dtype=float)
+
+evals, evecs = np.linalg.eig(A4)
+print("Autovalores:\n", evals)
+print("Autovectores (columnas de evecs):\n", evecs)
+
+# Verificación: A v ~ lambda v
+for k in range(len(evals)):
+    lhs = A4 @ evecs[:, k]
+    rhs = evals[k] * evecs[:, k]
+    err = np.linalg.norm(lhs - rhs)
+    print(f"k={k}: ||A v - lambda v||_2 = {err:.2e}")
+```
+
+---
+
+## Diagonalización de matrices 2x2
+
+Si $A$ tiene dos autovalores distintos (o es simétrica real), suele ser **diagonalizable**:  
+$A = V D V^{-1}$, con $D=\mathrm{diag}(\lambda_1,\lambda_2)$ y columnas de $V$ los autovectores.
+
+```{python}
+A5 = np.array([[5., 2.],
+               [2., 1.]], dtype=float)
+
+lam, V = np.linalg.eig(A5)
+D = np.diag(lam)
+V_inv = np.linalg.inv(V)
+
+# Reconstrucción
+A5_rec = V @ D @ V_inv
+err_rec = np.linalg.norm(A5 - A5_rec)
+print("A5 =\n", A5)
+print("D  =\n", D)
+print("V  =\n", V)
+print("||A5 - V D V^{-1}||_2 =", f"{err_rec:.2e}")
+```
+
+```{python}
+plt.figure()
+origin = np.array([[0,0],[0,0]])
+vecs = V.T
+plt.quiver(*origin, vecs[:,0], vecs[:,1], angles='xy', scale_units='xy', scale=1, color=['tab:blue','tab:orange'])
+plt.axhline(0, lw=0.8); plt.axvline(0, lw=0.8)
+plt.gca().set_aspect('equal', 'box')
+plt.title("Autovectores de A5")
+plt.xlim(-2, 2); plt.ylim(-2, 2)
+plt.show()
+```
+
+---
+
+## Diagonalización de matrices 3x3
+
+Para $A \in \mathbb{R}^{3\times 3}$, si posee tres autovectores linealmente independientes, es diagonalizable.
+
+```{python}
+A6 = np.array([[2., 1., 0.],
+               [1., 2., 1.],
+               [0., 1., 2.]], dtype=float)
+
+lam6, V6 = np.linalg.eig(A6)
+D6 = np.diag(lam6)
+V6_inv = np.linalg.inv(V6)
+
+A6_rec = V6 @ D6 @ V6_inv
+err6 = np.linalg.norm(A6 - A6_rec)
+print("Autovalores A6:\n", lam6)
+print("||A6 - V D V^{-1}||_2 =", f"{err6:.2e}")
+```
+
+---
+
+## Representación y comprobación de código
+
+```{python}
+A = np.array([[3., 2., 0.],
+              [0., 1., 4.],
+              [2., 0., 1.]], dtype=float)
+b = np.array([2., 4., 3.], dtype=float)
+
+x = np.linalg.solve(A, b)
+resid = np.linalg.norm(A @ x - b)
+print("Solución Ax=b:", x)
+print("||A x - b||_2:", resid)
+
+detA = np.linalg.det(A)
+print("det(A) =", detA)
+if abs(detA) > 1e-12:
+    A_inv = np.linalg.inv(A)
+    check_I = np.linalg.norm(A @ A_inv - np.eye(A.shape[0]))
+    print("||A A^{-1} - I||_2:", check_I)
+else:
+    print("A no es invertible.")
+
+evals, evecs = np.linalg.eig(A)
+errs = [np.linalg.norm(A @ evecs[:,k] - evals[k]*evecs[:,k]) for k in range(len(evals))]
+print("Autovalores:", evals)
+print("Errores de Av - lambda v:", [f"{e:.2e}" for e in errs])
+
+if np.linalg.matrix_rank(evecs) == A.shape[0]:
+    V = evecs
+    D = np.diag(evals)
+    V_inv = np.linalg.inv(V)
+    rec_err = np.linalg.norm(A - V @ D @ V_inv)
+    print("||A - V D V^{-1}||_2:", f"{rec_err:.2e}")
+else:
+    print("No hay base completa de autovectores: no se diagonaliza con matriz completa V.")
+```

@@ -7,18 +7,24 @@ book:
   date: today
   chapters:
     - index.qmd
-    - complejos-potenciacion-radicacion.qmd  # Tema 1
-  page-navigation: true
+    - complejos-potenciacion-radicacion.qmd
+    - algebra-lineal.qmd
+    - ecuaciones-en-diferencia.qmd
+    - ecuaciones-diferenciales-finanzas.qmd
+    - ecuaciones-logisticas.qmd
+    - series-y-transformadas.qmd
 
 format:
   pdf:
-    pdf-engine: pdflatex   # Computer Modern
+    pdf-engine: pdflatex
     toc: true
     number-sections: true
+    keep-tex: false
+    latex-clean: true
   html:
-    theme: cosmo
     number-sections: true
-
+    css: cm-web.css
+    html-math-method: katex   # fórmulas bonitas en navegador con tipografía TeX
 execute:
   echo: true
   warning: false

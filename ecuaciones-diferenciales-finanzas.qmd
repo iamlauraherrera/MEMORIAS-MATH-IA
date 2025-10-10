@@ -1,0 +1,93 @@
+---
+title: "Ecuaciones en diferencia y finanzas"
+---
+
+## Valor futuro y fórmulas financieras
+
+El valor futuro \(F\) de una inversión \(P\) a una tasa de interés \(i\) durante \(n\) períodos se expresa como:
+
+$$
+F=P(1+i)^n
+$$
+Cada período multiplica el capital por $(1+i)$.  
+La relación entre períodos consecutivos puede verse como:
+$$
+F_n = (1+i)F_{n-1},
+$$
+
+una ecuación en diferencia que representa crecimiento exponencial discreto.
+
+## Del interés compuesto a la ecuación en diferencia
+El modelo discreto:
+$$
+F_{n+1} = (1+i)F_n
+$$
+
+describe el interés compuesto acumulativo.  
+Si $(i = 0.1)$ y $(F_0 = 1000)$:  
+$$
+(F_1 = 1100,; F_2 = 1210,\; F_3 = 1331, \dots\
+$$
+Esta forma recursiva permite analizar o simular el comportamiento del dinero a lo largo del tiempo.
+
+## Ventajas del enfoque con ecuaciones en diferencia
+
+- Permite observar la **evolución temporal** del capital paso a paso.  
+- Facilita la **simulación** mediante algoritmos iterativos.  
+- Acepta **términos variables**, como aportes o retiros periódicos.  
+- Se adapta a análisis predictivos y de **riesgo financiero**.
+
+## Modelos financieros como ecuaciones en diferencia
+
+**Interés compuesto:**
+$$
+F_{n+1} = (1+i)F_n
+$$
+
+**Serie uniforme (aportes constantes \(A\)):**
+$$
+F_{n+1} = (1+i)F_n + A
+$$
+
+**Serie con gradiente aritmético:**
+$$
+F_{n+1} = (1+i)F_n + (A + Gn),
+$$
+
+donde $G$ es el cambio progresivo en los pagos.  
+Cada uno representa una variación del modelo general de crecimiento financiero discreto.
+
+## Simulación de modelos financieros
+
+Ejemplo de **interés compuesto**:
+
+```{python}
+F = 1000
+i = 0.1
+for n in range(5):
+    F = (1 + i) * F
+    print(f"Periodo {n+1}: F = {F:.2f}")
+```
+
+Ejemplo de **serie uniforme**:
+
+```{python}
+F = 0
+i = 0.08
+A = 200
+for n in range(6):
+    F = (1 + i) * F + A
+    print(f"Periodo {n+1}: F = {F:.2f}")
+```
+
+Estas simulaciones reproducen exactamente la ecuación en diferencia asociada a cada modelo.
+
+## Interpretación dinámica del valor del dinero
+
+La ecuación:
+$$
+F_{n+1} - F_n = iF_n
+$$
+muestra que el cambio de un período a otro es proporcional al capital actual.  
+Representa un **crecimiento exponencial discreto**, donde el dinero genera más valor conforme aumenta.  
+Este enfoque permite modelar fenómenos financieros como inversiones, préstamos o inflación en el tiempo.

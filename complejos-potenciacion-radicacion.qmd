@@ -2,27 +2,187 @@
 title: "Potenciación y radicación de números complejos"
 ---
 
-## De Moivre (raíces cuartas)
+## Introducción
 
-Si \(z = r e^{i\theta}\), las raíces cuartas son
-\[
-w_k = r^{1/4} e^{i\frac{\theta + 2\pi k}{4}},\ k=0,1,2,3.
-\]
+La radicación y la potenciación de números complejos extienden las operaciones reales al plano complejo.  
+En **forma polar**, todo número complejo puede escribirse como
+$$
+z \;=\; r(\cos\theta + i\sin\theta) \;=\; r\,e^{i\theta},
+$$
+donde \(r=|z|\) es el **módulo** y \(\theta=\arg(z)\) es el **argumento**.
+
+El **Teorema de De Moivre** establece que
+$$
+(\cos\theta + i\sin\theta)^n \;=\; \cos(n\theta) + i\sin(n\theta),
+$$
+y en forma exponencial \( (e^{i\theta})^n = e^{in\theta} \).
+
+---
+
+## Teorema de De Moivre (raíces cuartas)
+
+Sean \(z=re^{i\theta}\) y \(n\in\mathbb{N}\). Las \(n\)-ésimas raíces de \(z\) están dadas por
+$$
+w_k \;=\; r^{1/n}\,e^{\,i\frac{\theta+2\pi k}{n}},\qquad k=0,1,\dots,n-1.
+$$
+Para \(n=4\):
+$$
+w_k \;=\; r^{1/4}\,e^{\,i\frac{\theta+2\pi k}{4}},\qquad k=0,1,2,3.
+$$
 
 ```{python}
+# Cálculo base de raíces n-ésimas (De Moivre) + visualización
+# Bloque autocontenido: define z, n y W por sí mismo.
+
 import numpy as np, cmath, matplotlib.pyplot as plt
-def roots4(z):
+
+def raices_n_esimas(z: complex, n: int):
+    """Devuelve las n raíces de z usando su forma polar."""
     r, th = abs(z), cmath.phase(z)
-    return [(r**0.25)*np.exp(1j*((th+2*np.pi*k)/4)) for k in range(4)]
+    return [(r**(1/n))*np.exp(1j*((th + 2*np.pi*k)/n)) for k in range(n)]
 
-z = 1 + 1j*np.sqrt(3)  # ejemplo
-W = roots4(z)
-print([complex(round(w.real,6), round(w.imag,6)) for w in W])
-print("errores:", [abs(w**4 - z) for w in W])
+# Ejemplo: z = 2 * e^{i*pi/3} = 1 + i*sqrt(3)
+z = 2*np.exp(1j*np.pi/3)
+n = 4
+W = raices_n_esimas(z, n)
 
-plt.figure()
-plt.scatter([z.real],[z.imag], s=80, marker='*', label='z')
-plt.scatter([w.real for w in W],[w.imag for w in W], label='raíces cuartas')
-plt.axhline(0); plt.axvline(0); plt.gca().set_aspect('equal','box')
-plt.legend(); plt.title("Raíces cuartas de z"); plt.show()
+print("Raices 4tas de z (a + bi):")
+for k, w in enumerate(W):
+    print(f"k={k}: {w.real:.6f} + {w.imag:.6f} i")
+
+# Gráfica en el plano complejo
+plt.figure(figsize=(5,5))
+plt.scatter([z.real],[z.imag], s=110, marker="*", label="z")
+plt.scatter([w.real for w in W],[w.imag for w in W], s=70, label="raices 4tas")
+plt.gca().add_artist(plt.Circle((0,0), radius=abs(W[0]), fill=False, linestyle="--"))
+plt.axhline(0, lw=0.8); plt.axvline(0, lw=0.8)
+plt.gca().set_aspect("equal", "box")
+plt.title("Raices cuartas de z (De Moivre)")
+plt.xlabel("Parte real"); plt.ylabel("Parte imaginaria")
+plt.legend(); plt.tight_layout(); plt.show()
+```
+
+---
+
+## Raíz cuarta principal
+
+La **raíz principal** se obtiene con el **argumento principal** \(\operatorname{Arg}(z)\) y \(k=0\):
+$$
+\sqrt[4]{z}\;=\; r^{1/4}\,e^{\,i\,\operatorname{Arg}(z)/4}, \qquad z = r e^{i\theta}.
+$$
+
+```{python}
+# Cálculo de la raíz cuarta principal (bloque autocontenido)
+
+import numpy as np, cmath
+
+def raiz_cuarta_principal(z: complex):
+    r, th = abs(z), cmath.phase(z)   # usa Arg(z) del rango (-pi, pi]
+    return (r**0.25)*np.exp(1j*th/4)
+
+z = 2*np.exp(1j*np.pi/3)
+w0 = raiz_cuarta_principal(z)
+print("Raiz cuarta principal:", w0)
+```
+
+---
+
+## Aproximaciones numéricas
+
+Por aritmética de punto flotante, \(w_k^4\) no es **exactamente** \(z\). El residuo \( |w_k^4 - z| \) debe ser pequeño.
+
+```{python}
+# Residuos |w^n - z| (bloque autocontenido)
+
+import numpy as np, cmath
+
+def raices_n_esimas(z: complex, n: int):
+    r, th = abs(z), cmath.phase(z)
+    return [(r**(1/n))*np.exp(1j*((th + 2*np.pi*k)/n)) for k in range(n)]
+
+z = 2*np.exp(1j*np.pi/3); n = 4
+W = raices_n_esimas(z, n)
+
+residuos = [abs(w**n - z) for w in W]
+print("Residuos |w^4 - z|:", [f"{e:.2e}" for e in residuos])
+print("Maximo residuo:", f"{max(residuos):.2e}")
+```
+
+---
+
+## Verificación
+
+Comprobamos que todas las raíces satisfacen \( w_k^4 \approx z \) con una tolerancia razonable y que los ángulos están separados por \(2\pi/n\) (90° para \(n=4\)).
+
+```{python}
+# Verificación: w^n ~= z y separación angular 2*pi/n (bloque autocontenido)
+
+import numpy as np, cmath
+
+def raices_n_esimas(z: complex, n: int):
+    r, th = abs(z), cmath.phase(z)
+    return [(r**(1/n))*np.exp(1j*((th + 2*np.pi*k)/n)) for k in range(n)]
+
+z = 2*np.exp(1j*np.pi/3); n = 4
+W = raices_n_esimas(z, n)
+
+ok = all(abs(w**n - z) < 1e-10 for w in W)
+angs = sorted([cmath.phase(w) for w in W])
+deltas = [ (angs[(i+1)%n] - angs[i]) % (2*np.pi) for i in range(n) ]
+
+print("Todas verifican w^4 ~= z (tol=1e-10)?", ok)
+print("Angulos (rad):", [f"{a:.6f}" for a in angs])
+print("Separaciones (rad):", [f"{d:.6f}" for d in deltas])
+```
+
+---
+
+## Aplicación: \(\big(\tfrac{16i}{1+i}\big)^{1/2}\)
+
+Simplificación algebraica:
+$$
+\frac{16i}{1+i}
+\;=\;
+\frac{16i(1-i)}{(1+i)(1-i)}
+\;=\;
+\frac{16+16i}{2}
+\;=\;
+8+8i.
+$$
+
+```{python}
+# Aplicación: sqrt(16i/(1+i)) = sqrt(8+8i) con verificación y gráfica
+# Bloque autocontenido
+
+import numpy as np, matplotlib.pyplot as plt
+
+# Definición del numero complejo
+z2 = 16j/(1+1j)   # = 8 + 8i
+a, b = z2.real, z2.imag
+r = np.hypot(a, b)
+
+# Raiz cuadrada principal (formula cerrada) para b>0:
+x = np.sqrt((r + a)/2.0)
+y = np.sqrt((r - a)/2.0)   # mismo signo que b (>0)
+w = x + 1j*y
+w_op = -w
+
+# Verificación (usando potencia fraccionaria de Python)
+w_py = z2**0.5
+print("z2 =", z2, "(= 8+8i)")
+print("sqrt(z2) (formula) =", w)
+print("sqrt(z2) (python)  =", w_py)
+print("|(w)^2 - z2| =", abs(w**2 - z2))
+print("|(w_py)^2 - z2| =", abs(w_py**2 - z2))
+
+# Grafica: z2 y sus dos raices ±w
+plt.figure(figsize=(5,5))
+plt.scatter([z2.real],[z2.imag], s=120, marker="*", label="z=8+8i")
+plt.scatter([w.real, w_op.real], [w.imag, w_op.imag], s=80, label="raices +/- w")
+plt.gca().add_artist(plt.Circle((0,0), radius=abs(w), fill=False, linestyle="--"))
+plt.axhline(0, lw=0.8); plt.axvline(0, lw=0.8)
+plt.gca().set_aspect("equal", "box")
+plt.title("Aplicacion: sqrt(16i/(1+i))")
+plt.xlabel("Parte real"); plt.ylabel("Parte imaginaria")
+plt.legend(); plt.tight_layout(); plt.show()
 ```

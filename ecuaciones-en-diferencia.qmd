@@ -1,0 +1,154 @@
+---
+title: "Ecuaciones en diferencia y métodos de aproximación"
+---
+
+## Método de Herón para aproximar raíces cuadradas
+
+El **método de Herón**, también llamado método babilónico, es un procedimiento iterativo para calcular raíces cuadradas.  
+Dado un número \( S \) y una estimación inicial \( y_0 \), la fórmula general es:
+
+$$
+y(k+1) = \frac{1}{2}\left(y_k + \frac{S}{y_k}\right)
+$$
+
+Cada iteración mejora la aproximación al valor real \sqrt(S)\.  
+El proceso se basa en una idea equivalente al método de Newton aplicado a 
+$$
+f(y) = y^2 - S 
+$$
+La iteración se detiene cuando la diferencia \( |y_{k+1} - y_k| \) es suficientemente pequeña.
+
+## Ejemplo aproximación de raiz cuadrada de 2 con $y0=1$
+
+Aplicando el método:
+
+\[
+\begin{aligned}
+y_1 &= \tfrac{1}{2}(1 + 2/1) = 1.5,\\[4pt]
+y_2 &= \tfrac{1}{2}(1.5 + 2/1.5) = 1.4166,\\[4pt]
+y_3 &= \tfrac{1}{2}(1.4166 + 2/1.4166) = 1.4142.
+\end{aligned}
+\]
+
+Con solo tres iteraciones, el resultado se aproxima al valor real:
+
+raiz de 2 = 1.41421356
+
+Al elevar \( 1.4142^2 \) se obtiene aproximadamente \( 2 \), confirmando la exactitud de la aproximación.
+
+## Ecuación en diferencia tipo Fibonacci
+
+Consideremos la ecuación en diferencia:
+
+$$
+y_{n+2} - y_{n+1} - y_n = 0, 
+\qquad y_0 = 1,\; y_1 = 1.
+$$
+
+Su polinomio característico es:
+$$
+r^2 - r - 1 = 0.
+$$
+
+Sus raíces son:
+$$
+r_1 = \frac{1 + \sqrt{5}}{2}, 
+\qquad 
+r_2 = \frac{1 - \sqrt{5}}{2}.
+$$
+Por lo tanto, la solución general es:
+$$
+y_n = A\,r_1^n + B\,r_2^n.
+$$
+
+Aplicando las condiciones iniciales, se obtiene la **forma cerrada de Fibonacci**:
+$$
+y_n = \frac{r_1^{\,n+1} - r_2^{\,n+1}}{\sqrt{5}}.
+$$
+
+## Método general para ecuaciones en diferencia lineales con coeficientes constantes
+
+Para una ecuación de orden \(k\):
+$$
+a_k y_{n+k} + a_{k-1} y_{n+k-1} + \dots + a_0 y_n = g(n),
+$$
+
+los pasos generales son:
+
+1. Plantear la **ecuación característica** (caso homogéneo \( g(n) = 0 \)).  
+2. Encontrar las **raíces** del polinomio y su multiplicidad.  
+3. Formar la **solución homogénea** según el tipo de raíces (reales, repetidas o complejas).  
+4. Proponer una **solución particular** dependiendo de \( g(n) \).  
+5. Sumar ambas y aplicar **condiciones iniciales** para determinar las constantes.
+
+## Ejemplo no homogéneo
+$$
+y_{n+2} - 3y_{n+1} + 2y_n = 4^n, 
+\qquad 
+y_0 = 0,\; y_1 = 4.
+$$
+
+Ecuación característica:
+$$
+r^2 - 3r + 2 = 0 
+\quad \Rightarrow \quad 
+r = 1,\; 2.
+$$
+
+Solución homogénea:
+$$
+y_n^{(h)} = A + B\,2^n.
+$$
+
+Propuesta particular:
+$$
+y_n^{(p)} = C\,4^n \quad \Rightarrow \quad C = \frac{1}{6}.
+$$
+
+Solución general:
+$$
+y_n = A + B\,2^n + \tfrac{1}{6}4^n.
+$$
+
+Determinando las constantes con $y_0$ y $y_1$, se obtiene la secuencia final.
+
+## Interpretación computacional
+Las ecuaciones en diferencia pueden implementarse fácilmente en código para simular sus valores iterativos.
+
+**Ejemplo 1 — Método de Herón:**
+```{python}
+def heron_sqrt(S, y0=1.0, tol=1e-10, max_iter=10):
+    """
+    Aproxima la raíz cuadrada de S mediante el método de Herón.
+    """
+    y = y0
+    for _ in range(max_iter):
+        y_next = 0.5 * (y + S / y)
+        if abs(y_next - y) < tol:
+            break
+        y = y_next
+    return y
+print("Aproximación de sqrt(2):", heron_sqrt(2))
+```
+**Ejemplo 2 — Ecuación en diferencia no homogénea:**
+```{python}
+def solve_second_order(a1, a0, g, y0, y1, N):
+    """
+    Resuelve una ecuación en diferencia del tipo:
+        y_{n+2} + a1*y_{n+1} + a0*y_n = g(n)
+    """
+    y = [y0, y1]
+    for n in range(0, N-2):
+        y_next = -a1 * y[-1] - a0 * y[-2] + g(n)
+        y.append(y_next)
+    return y
+
+# Ejemplo con y_{n+2} - 3y_{n+1} + 2y_n = 4^n
+g = lambda n: 4**n
+seq = solve_second_order(-3, 2, g, y0=0, y1=4, N=8)
+print("Secuencia y_n:", seq)
+```
+
+## Conclusión
+Las ecuaciones en diferencia constituyen una herramienta fundamental para modelar **procesos discretos** y **series temporales**, con aplicaciones en economía, ingeniería y algoritmos de aprendizaje.  
+El método de Herón, por su parte, ejemplifica el poder de los procedimientos iterativos para alcanzar soluciones precisas a partir de aproximaciones iniciales simples.
