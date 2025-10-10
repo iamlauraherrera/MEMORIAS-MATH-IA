@@ -1,30 +1,21 @@
 ---
 title: "Memorias de Matemáticas para la IA"
-subtitle: "Apuntes con teoría (LaTeX) y práctica (Python)"
-author: "Tu Nombre"
+author: "Laura Herrera"
 date: today
-format:
-  pdf: default
-  html: default
+# Solo para la portada:
+toc: false              # no mostrar TOC interno en la portada
+number-sections: false  # no numerar encabezados dentro de index
 ---
 
-Bienvenido/a. Aquí van mis memorias del curso.
+# Introducción
 
-## ¿Cómo se usa?
-1. Edita los capítulos `.qmd`.
-2. Presiona **Ctrl+Shift+B** y elige **Render Memorias (PDF)**.
+Estas memorias sintetizan los contenidos del curso y su conexión con la práctica computacional.
 
-## Prueba rápida (fórmula)
-Fórmula en línea \( a^2 + b^2 = c^2 \).
+## Organización de las memorias (6 temas)
 
-Fórmula en bloque:
-\[
-\|x\|_2 \;=\; \sqrt{\sum_{i=1}^{n} x_i^2}
-\]
-
-## Prueba rápida (código)
-```{python}
-import numpy as np
-x = np.array([3,4])
-print("Norma L2 de [3,4]:", np.linalg.norm(x))
-```
+1. [Potenciación y radicación de complejos](complejos-potenciacion-radicacion.qmd)
+2. [Álgebra lineal](algebra-lineal.qmd)
+3. [Ecuaciones en diferencia](ecuaciones-en-diferencia.qmd)
+4. [Ecuaciones diferenciales y su relación en finanzas](ecuaciones-diferenciales-finanzas.qmd)
+5. [Ecuaciones logísticas](ecuaciones-logisticas.qmd)
+6. [Series y transformadas](series-y-transformadas.qmd)
