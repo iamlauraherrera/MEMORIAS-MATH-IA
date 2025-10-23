@@ -236,6 +236,8 @@ $$
 
 con **multiplicidad algebraica** $$m_a = 3$$.
 
+## Vectores propios
+
 **Vectores propios**: Vamos a resolver 
 
 $$
