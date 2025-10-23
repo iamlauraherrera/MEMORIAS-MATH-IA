@@ -309,4 +309,76 @@ $$
 ## Comprobación computacional en Python
 
 ```{python}
+# EDITA AQUÍ (1): MATRIZ A
+A_list = [
+    [2, 1, 0],
+    [0, 2, 0],
+    [0, 0, 2],
+]
+
+# EDITA AQUÍ (2): eigenvalor a analizar
+lambda_eval = 2
+
+import sympy as sp
+
+A = sp.Matrix(A_list)
+n = A.shape[0]
+
+print("Matriz A =")
+sp.pprint(A); print()
+
+# 1) Valores propios y multiplicidades algebraicas
+evals = A.eigenvals()
+print("Valores propios (m_a):")
+for lam, mult in evals.items():
+    print(f"  λ = {lam}   (m_a = {mult})")
+print()
+
+# 2) Espacio propio de lambda_eval
+E = A - lambda_eval*sp.eye(n)
+print(f"Espacio propio para λ = {lambda_eval}:  (A - λI) v = 0")
+print("A - λI =")
+sp.pprint(E); print()
+
+null_basis = E.nullspace()
+print("Base del espacio propio:")
+if null_basis:
+    for i, v in enumerate(null_basis, 1):
+        print(f"  v_{i} = "); sp.pprint(v); print()
+else:
+    print("  (vacío) → λ no es eigenvalor de A\n")
+
+m_g = len(null_basis)
+print(f"Multiplicidad geométrica m_g(λ={lambda_eval}) = {m_g}\n")
+
+# 3) ¿Es A diagonalizable? (suma de m_g para todos los λ debe ser n)
+eig_vects = A.eigenvects()  # [(λ, m_a, [basis]), ...]
+total_geom = sum(len(basis) for _, _, basis in eig_vects)
+es_diag = (total_geom == n)
+
+print("¿A es diagonalizable?")
+print(f"  Suma de multiplicidades geométricas = {total_geom} (n = {n})")
+print(f"  Resultado: {'SÍ' if es_diag else 'NO'}\n")
+
+# 4) Si es diagonalizable, construimos P y D y verificamos P^{-1} A P = D
+if es_diag:
+    eig_vects_sorted = sorted(eig_vects, key=lambda t: t[0])  # ordenar por λ (opcional)
+    P_cols, D_diag = [], []
+    for lam, _, basis in eig_vects_sorted:
+        for v in basis:
+            P_cols.append(sp.Matrix(v))
+            D_diag.append(lam)
+    P = sp.Matrix.hstack(*P_cols)
+    D = sp.diag(*D_diag)
+
+    print("P (columnas = eigenvectores):")
+    sp.pprint(P); print()
+    print("D (diagonal de eigenvalores):")
+    sp.pprint(D); print()
+
+    print("Verificación P^{-1} A P =")
+    sp.pprint(sp.simplify(P.inv()*A*P)); print()
+else:
+    print("Explicación:")
+    print("  No hay suficientes eigenvectores linealmente independientes para formar P.")
 ```
