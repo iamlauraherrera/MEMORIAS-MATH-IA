@@ -129,28 +129,54 @@ for k, w in enumerate(W):
 ```
 ## Grafica de raices
 ```{python}
-import cmath  #librerias
+import cmath
 import math
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
 
-def graficar_raices(z: complex, n: int):
-    """Grafica las raíces n-ésimas de z en el plano complejo."""
+def graficar_raices(z: complex, n: int, conectar=True, rayos=False, circulo=True):
+    """Grafica raíces n-ésimas de z y (opcional) las conecta en orden angular."""
     roots = raices_n_esimas(z, n)
+    if not roots:
+        return
     radio = abs(roots[0])
 
-    # Coordenadas de las raíces
-    xs = [w.real for w in roots]
-    ys = [w.imag for w in roots]
+    # Ordenar por ángulo para conectar correctamente
+    roots_sorted = sorted(roots, key=lambda w: cmath.phase(w))
 
-    # Gráfica en el plano complejo
+    # Coordenadas
+    xs = [w.real for w in roots_sorted]
+    ys = [w.imag for w in roots_sorted]
+
+    # Cerrar el polígono si se conecta
+    if conectar and n > 1:
+        xs.append(xs[0])
+        ys.append(ys[0])
+
+    # Gráfica
     fig, ax = plt.subplots(figsize=(5,5))
-    ax.scatter(xs, ys, color="blue", s=60, label="Raíces n-ésimas")
-    ax.add_artist(plt.Circle((0,0), radio, fill=False, linestyle="--", color="gray"))
 
-    # Etiquetas con k
-    for k, (x, y) in enumerate(zip(xs, ys)):
-        ax.text(x, y, f"k={k}", fontsize=9, va="bottom", ha="left")
+    # Círculo guía
+    if circulo:
+        ax.add_artist(plt.Circle((0,0), radio, fill=False, linestyle="--", color="red", lw=1))
 
+    # Puntos
+    ax.scatter([w.real for w in roots], [w.imag for w in roots],
+               color="blue", s=60, zorder=3, label="Raíces")
+
+    # Conexión (polígono)
+    if conectar and n > 1:
+        ax.plot(xs, ys, color="blue", lw=1.5, alpha=0.9, label="Polígono")
+
+    # Rayos desde el origen (opcional)
+    if rayos:
+        for w in roots:
+            ax.plot([0, w.real], [0, w.imag], color="green", lw=0.8, zorder=1)
+
+    # Etiquetas k (según orden original de generación)
+    for k, w in enumerate(roots):
+        ax.text(w.real, w.imag, f"k={k}", fontsize=9, va="bottom", ha="left")
+
+    # Ejes y estilo
     ax.axhline(0, color="black", lw=0.8)
     ax.axvline(0, color="black", lw=0.8)
     ax.set_aspect("equal", adjustable="box")
@@ -162,7 +188,8 @@ def graficar_raices(z: complex, n: int):
     plt.show()
 
 # ==== Ejemplo del ejercicio ====
-z = (16j)/(1+1j)   # z = (16 i)/(1+i)
+z = (16j)/(1+1j)  # (16 i)/(1+i)
 n = 8
-graficar_raices(z, n)
+graficar_raices(z, n, conectar=True, rayos=True, circulo=True)
+
 ```
