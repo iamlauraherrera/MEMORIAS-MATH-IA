@@ -203,22 +203,108 @@ A = P D P^{-1}, D =
 \text{diag}(-1, -2).
 $$
 
-## 5) Comprobación computacional en Python
+## Ejercicio matriz $3x3$
+
+$$
+A=\begin{bmatrix}2 & 1 & 0\\[2pt] 0 & 2 & 0\\[2pt]\ 0 & 0 & 2\\[2pt]\end{bmatrix},\quad
+$$
+
+## Polinomio característico
+
+El polinomio característico de $A$ es
+$$
+p_A(\lambda) = \det(A - \lambda I)
+= \det
+\begin{bmatrix}
+2 - \lambda & 1 & 0\\
+0 & 2 - \lambda & 0\\
+0 & 0 & 2 - \lambda
+\end{bmatrix}.
+$$
+
+Como la matriz es triangular superior, el determinante es el producto de los elementos de la diagonal:
+
+$$
+p_A(\lambda) = (2 - \lambda)^3.
+$$
+
+Por lo tanto, el único valor propio es:
+
+$$
+\lambda = 2,
+$$
+
+con **multiplicidad algebraica** $$m_a = 3$$.
+
+**Vectores propios**: Vamos a resolver 
+
+$$
+(A - 2I)\vec{t} = 0,
+$$
+
+es decir,
+
+$$
+A - 2I =
+\begin{bmatrix}
+0 & 1 & 0\\
+0 & 0 & 0\\
+0 & 0 & 0
+\end{bmatrix}.
+$$
+
+Sea $\vec{t} = \begin{bmatrix} \vec{t}_1 \\ \vec{t}_2 \\ \vec{t}_3 \end{bmatrix}$, el sistema resulta:
+
+$$
+\vec{t}_2 = 0,
+$$
+
+con $\vec{t}_1, \vec{t}_3$ libres. ∴
+
+$$
+\vec{t} =
+\begin{bmatrix}
+\vec{t}_1\\
+0\\
+\vec{t}_3
+\end{bmatrix}
+= \vec{t}_1
+\begin{bmatrix}
+1\\
+0\\
+0
+\end{bmatrix}
++ \vec{t}_3
+\begin{bmatrix}
+0\\
+0\\
+1
+\end{bmatrix}.
+$$
+
+**Espacio propio**: El espacio propio asociado a $\lambda = 2$ está generado por:
+
+$$
+\mathbf{v}_1 =
+\begin{bmatrix}
+1\\
+0\\
+0
+\end{bmatrix},
+\qquad
+\mathbf{v}_2 =
+\begin{bmatrix}
+0\\
+0\\
+1
+\end{bmatrix}.
+$$
+
+∴, $A$ **no es diagonalizable** (solo tiene dos vectores propios linealmente independientes para una matriz de orden 3).
+
+---
+
+## Comprobación computacional en Python
 
 ```{python}
-import numpy as np
-
-A = np.array([[-2., -3.],
-              [ 1.,  0.]])
-B = np.array([[3.],
-              [1.]])
-
-A_inv = np.linalg.inv(A)
-X = A_inv @ B
-
-print("A^{-1} =\n", A_inv)
-print("\nX = A^{-1} B =\n", X)
-
-# Verificación AX ~ B (errores numéricos ~ 1e-16)
-print("\nAX =\n", A @ X)
-print("\nResiduo AX - B =\n", A @ X - B)
+```

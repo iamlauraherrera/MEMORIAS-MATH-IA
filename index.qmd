@@ -1,6 +1,6 @@
 ---
 title: "Memorias de Matemáticas para la IA"
-author: "Laura Herrera"
+author: "Laura Herrera & Juan Esteban Duque"
 date: today
 # Solo para la portada:
 toc: false              # no mostrar TOC interno en la portada
