@@ -7,15 +7,13 @@ import matplotlib.pyplot as plt
 np.set_printoptions(precision=4, suppress=True)
 ```
 
-## Introducción a las matrices
+## Ejemplo completo: hallar la inversa de coeficientes y resolver el sistema 
 
-Una **matriz** $A \in \mathbb{R}^{m \times n}$ es un arreglo rectangular de números reales (o complejos).  
-- **Filas**: índice $i=1,\dots,m$.  
-- **Columnas**: índice $j=1,\dots,n$.  
-- **Entrada**: $a_{ij}$ en la fila $i$, columna $j$.  
-- **Matriz identidad** $I_n$: diagonal de unos, resto ceros.  
-- **Matriz traspuesta**: $(A^\top)_{ij}=a_{ji}$.
+Sea el sistema
 
+$$
+
+$$
 
 Este fragmento de código crea una matriz A de tamaño 2×3 usando numpy. La matriz contiene números flotantes. Luego, imprime la matriz y muestra su forma (dimensiones)
 ```{python}
