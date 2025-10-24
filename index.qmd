@@ -1,8 +1,11 @@
 ---
 title: "Memorias de Matemáticas para la IA"
+::: {.text-center}
+[📄 Descargar versión completa (PDF)](MEMORIAS-MATH-IA.pdf){.btn .btn-primary .btn-lg target="_blank" download}
+:::
+
 author: "Laura Herrera & Juan Esteban Duque"
 date: today
-# Solo para la portada:
 toc: false              # no mostrar TOC interno en la portada
 number-sections: false  # no numerar encabezados dentro de index
 ---

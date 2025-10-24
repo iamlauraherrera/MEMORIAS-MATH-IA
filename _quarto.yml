@@ -9,6 +9,10 @@ website:
     left:
       - href: index.qmd
         text: Inicio
+    right:
+      - text: "PDF"
+        href: MEMORIAS-MATH-IA.pdf
+        target: _blank
   sidebar:
     style: floating
     search: true
@@ -23,6 +27,12 @@ website:
       - series-y-transformadas.qmd
 
 format:
+  pdf:
+    pdf-engine: xelatex
+    mainfont: "EB Garamond"
+    fontsize: 11pt
+    geometry:
+      - margin=2cm
   html:
     theme:
       light: journal  

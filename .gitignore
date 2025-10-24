@@ -65,8 +65,13 @@ Thumbs.db
 */*~
 *.tmp
 *.bak
+*.log
+*.aux  
+*.tex
 
 # =========================
 # Node / JS (si apareciera)
 # =========================
 node_modules/
+/.quarto/
+**/*.quarto_ipynb
