@@ -1,33 +1,18 @@
-project:
-  type: book
-  output-dir: docs     # 👈 agrega esta línea
+name: Publish Quarto Book to GitHub Pages
 
-book:
-  title: "Memorias de Matemáticas para la IA"
-  author: "Laura Herrera"
-  date: today
-  chapters:
-    - index.qmd
-    - complejos-potenciacion-radicacion.qmd
-    - algebra-lineal.qmd
-    - ecuaciones-en-diferencia.qmd
-    - ecuaciones-diferenciales-finanzas.qmd
-    - ecuaciones-logisticas.qmd
-    - series-y-transformadas.qmd
+on:
+  push:
+    branches: [ "main" ]
 
-format:
-  pdf:
-    pdf-engine: lualatex
-    toc: true
-    number-sections: true
-    keep-tex: false
-    latex-clean: true
-  html:
-    number-sections: true
-    css: cm-web.css
-    html-math-method: katex   # fórmulas bonitas en navegador con tipografía TeX
-
-execute:
-  echo: true
-  warning: false
-  error: false
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: quarto-dev/quarto-actions/setup@v2
+      - name: Render Quarto Project
+        uses: quarto-dev/quarto-actions/render@v2
+      - name: Publish to GitHub Pages
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
