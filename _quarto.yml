@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: docs   # <- necesario para GitHub Pages
+  output-dir: docs
 
 website:
   title: "MEMORIAS MATH IA"
@@ -10,11 +10,6 @@ website:
     left:
       - href: index.qmd
         text: Inicio
-      # Agrega aquí otras páginas si las tienes, por ejemplo:
-      # - href: temario.qmd
-      #   text: Temario
-      # - href: practicas.qmd
-      #   text: Prácticas
     right:
       - icon: github
         href: https://github.com/iamlauraherrera/MEMORIAS-MATH-IA
@@ -29,8 +24,9 @@ format:
       dark: slate
     lang: es
 
-# Opcional: configura cómo se renderiza cada .qmd por defecto
+# Ejecuta cada .qmd una vez y guarda resultados si no cambian
 execute:
+  freeze: auto   # evita re-ejecutar si el código no cambió
   echo: false
   warning: false
   message: false
