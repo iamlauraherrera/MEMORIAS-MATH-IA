@@ -1,18 +1,36 @@
-name: Publish Quarto Book to GitHub Pages
+project:
+  type: website
+  output-dir: docs   # <- necesario para GitHub Pages
 
-on:
-  push:
-    branches: [ "main" ]
+website:
+  title: "MEMORIAS MATH IA"
+  description: "Notas y ejercicios de MATH + IA"
+  search: true
+  navbar:
+    left:
+      - href: index.qmd
+        text: Inicio
+      # Agrega aquí otras páginas si las tienes, por ejemplo:
+      # - href: temario.qmd
+      #   text: Temario
+      # - href: practicas.qmd
+      #   text: Prácticas
+    right:
+      - icon: github
+        href: https://github.com/iamlauraherrera/MEMORIAS-MATH-IA
 
-jobs:
-  build-deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: quarto-dev/quarto-actions/setup@v2
-      - name: Render Quarto Project
-        uses: quarto-dev/quarto-actions/render@v2
-      - name: Publish to GitHub Pages
-        uses: quarto-dev/quarto-actions/publish@v2
-        with:
-          target: gh-pages
+format:
+  html:
+    toc: true
+    number-sections: false
+    smooth-scroll: true
+    theme:
+      light: cosmo
+      dark: slate
+    lang: es
+
+# Opcional: configura cómo se renderiza cada .qmd por defecto
+execute:
+  echo: false
+  warning: false
+  message: false
