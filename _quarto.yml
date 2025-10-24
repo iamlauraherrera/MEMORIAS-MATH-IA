@@ -27,7 +27,7 @@ format:
     theme:
       light: journal  
       dark: slate    
-    math: katex       
+    math: katex        
     toc: true
     number-sections: false
     smooth-scroll: true
