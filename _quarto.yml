@@ -1,5 +1,6 @@
 project:
   type: book
+  output-dir: docs     # 👈 agrega esta línea
 
 book:
   title: "Memorias de Matemáticas para la IA"
@@ -16,7 +17,7 @@ book:
 
 format:
   pdf:
-    pdf-engine: pdflatex
+    pdf-engine: lualatex
     toc: true
     number-sections: true
     keep-tex: false
@@ -25,6 +26,7 @@ format:
     number-sections: true
     css: cm-web.css
     html-math-method: katex   # fórmulas bonitas en navegador con tipografía TeX
+
 execute:
   echo: true
   warning: false
