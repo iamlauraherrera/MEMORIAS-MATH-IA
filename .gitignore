@@ -1,30 +1,72 @@
-_book/
+# =========================
+# Quarto / Render cache
+# =========================
 .quarto/
-site_libs/
+_book/
+_freeze/
+# Si usas GitHub Pages con /docs, NO ignores docs/
+# docs/
+
+# =========================
+# LaTeX temporales
+# =========================
 *.aux
 *.log
-*.toc
 *.out
-*.tex
-*.synctex.gz
-*.fdb_latexmk
+*.toc
+*.lof
+*.lot
 *.fls
-/.quarto/
-**/*.quarto_ipynb
-.Rproj.user/
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+*.xdv
+*.nav
+*.snm
+*.vrb
+*.ilg
+*.ind
+*.idx
+*.glo
+*.gls
+*.ist
+*.acn
+*.acr
+*.alg
+
+# (Opcional) Si generas .tex intermedios y NO los versionas:
+# *.tex
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# =========================
+# R / RStudio (por si usas)
+# =========================
 .Rhistory
 .RData
-.Ruserdata
+.Rproj.user/
+
+# =========================
+# Sistema / editores
+# =========================
 .DS_Store
 Thumbs.db
-*.utf8.md
-*.knit.md
-*.utf8.Rmd
-*.knit.Rmd
-*.cache/
-*.utf8.qmd
-*.knit.qmd
-*.utf8.ipynb
-*.knit.ipynb
-*.ipynb_checkpoints/
-*.nb.html
+*~
+*/*~
+*.tmp
+*.bak
+
+# =========================
+# Node / JS (si apareciera)
+# =========================
+node_modules/
