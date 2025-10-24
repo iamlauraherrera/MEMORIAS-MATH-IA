@@ -400,7 +400,7 @@
     "href": "index.html",
     "title": "Memorias de Matemáticas para la IA",
     "section": "",
-    "text": "📄 Descargar versión completa (PDF){.btn .btn-primary .btn-lg target=“_blank” download}",
+    "text": "[📄 Descargar versión completa (PDF)] (memorias.pdf){.btn .btn-primary .btn-lg target=“_blank” download}",
     "crumbs": [
       "Inicio",
       "Memorias de Matemáticas para la IA"

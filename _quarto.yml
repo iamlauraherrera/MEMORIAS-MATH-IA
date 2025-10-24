@@ -11,7 +11,7 @@ website:
         text: Inicio
     right:
       - text: "PDF"
-        href: MEMORIAS-MATH-IA.pdf
+        href: memorias.pdf
         target: _blank
   sidebar:
     style: floating
