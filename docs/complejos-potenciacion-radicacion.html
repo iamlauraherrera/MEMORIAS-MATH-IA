@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -294,6 +329,12 @@ window.Quarto = {
 <span class="menu-text">Inicio</span></a>
   </li>  
 </ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./MEMORIAS-MATH-IA.pdf" target="_blank"> 
+<span class="menu-text">PDF</span></a>
+  </li>  
+</ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
@@ -437,7 +478,27 @@ w_k \;=\; r^{1/4}\,e^{\,i\frac{\theta+2\pi k}{4}},\qquad k=0,1,2,3.
 <section id="verificación-numérica-por-codigo" class="level1">
 <h1>Verificación numérica por codigo:</h1>
 <p>Cada raíz debe cumplir <span class="math inline">\(w^n ≈ z\)</span></p>
-<div id="5d1ff854" class="cell" data-execution_count="1">
+<div id="f87e8ad3" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cálculo de raíces n-ésimas con De Moivre</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cmath, math <span class="co">#Librerias</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> raices_n_esimas(z: <span class="bu">complex</span>, n: <span class="bu">int</span>):</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">    Devuelve la lista [w_0, ..., w_{n-1}] de raíces n-ésimas de z,</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">    usando la forma polar y De Moivre:</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">       w_k = |z|^(1/n) * exp( i*(arg(z) + 2πk)/n ),  k=0..n-1</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    r, th <span class="op">=</span> <span class="bu">abs</span>(z), cmath.phase(z)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [(r<span class="op">**</span>(<span class="dv">1</span><span class="op">/</span>n)) <span class="op">*</span> cmath.exp(<span class="ot">1j</span> <span class="op">*</span> (th <span class="op">+</span> <span class="dv">2</span><span class="op">*</span>math.pi<span class="op">*</span>k) <span class="op">/</span> n) <span class="cf">for</span> k <span class="kw">in</span> <span class="bu">range</span>(n)]</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># --- Ejemplo del ejercicio: z = (16 i)/(1 + i), n = 8 ---</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> (<span class="ot">16j</span>) <span class="op">/</span> (<span class="dv">1</span> <span class="op">+</span> <span class="ot">1j</span>) <span class="co">#debemos reemplazar i por j en Python</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">8</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>W <span class="op">=</span> raices_n_esimas(z, n)</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Verificación numérica: cada raíz debe cumplir w^n ≈ z</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>residuos <span class="op">=</span> [<span class="bu">abs</span>(w<span class="op">**</span>n <span class="op">-</span> z) <span class="cf">for</span> w <span class="kw">in</span> W]</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Residuos:"</span>,[<span class="ss">f"</span><span class="sc">{</span>r<span class="sc">:.2e}</span><span class="ss">"</span> <span class="cf">for</span> r <span class="kw">in</span> residuos])</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Residuos: ['8.88e-15', '1.07e-14', '7.94e-15', '1.07e-14', '9.57e-15', '5.40e-14', '4.65e-14', '5.40e-14']</code></pre>
 </div>
@@ -458,8 +519,8 @@ z=8\sqrt2\,e^{i\pi/4}.
 <p>Por tanto, si <span class="math inline">\(z=8\sqrt2\,e^{i\pi/4}\)</span>, sus <strong>ocho raices octavas</strong> son:</p>
 <p><span class="math inline">\(n=8\)</span></p>
 <p><span class="math display">\[
-\boxed{w_k= (8\sqrt2)^{1/8}\,e^{\,i\left(\frac{\pi}{32}+\frac{k\pi}{4}\right)},
-\qquad k=0,1,\dots,7.}
+\boxed{w_k= (8\sqrt2)^{1/8}\,e^{\,i\left(\frac{\pi}{32}+\frac{k\pi}{4}\right)}}
+\qquad k=0,1,\dots,7.
 \]</span></p>
 <p>Como <span class="math inline">\((8\sqrt2)^{1/8}=2^{7/16}\)</span>, el radio comun es: <span class="math display">\[
 \boxed{\,w_k=2^{7/16}\Big[\cos\!\Big(\tfrac{\pi}{32}+\tfrac{k\pi}{4}\Big)
@@ -481,7 +542,24 @@ w_0=2^{7/16}{e^{i\frac{\pi}{32}}}\approx 1.349+0.133i.
 <p>Por aritmética de punto flotante, <span class="math inline">\(w_k^4\)</span> no es <strong>exactamente</strong> <span class="math inline">\(z\)</span>. El residuo <span class="math inline">\(|w_k^4 - z|\)</span> debe ser pequeño.</p>
 <p>Para el ejemplo anterior, todas las raíces están sobre el círculo de centro <span class="math inline">\((0,0)\)</span> y radio <span class="math inline">\(r=1.3543\)</span>, formando un <strong>octagono regular</strong>. El primer punto esta en el angulo <span class="math inline">\({\pi}/32  (\approx 5.625°)\)</span> y luego vas sumando <span class="math inline">\({\pi}/4\)</span></p>
 <p><strong>Coordenadas aproximadas (para trazar)</strong></p>
-<div id="fce95196" class="cell" data-execution_count="2">
+<div id="c8b59c35" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> signo_md(x: <span class="bu">float</span>, dec: <span class="bu">int</span> <span class="op">=</span> <span class="dv">4</span>) <span class="op">-&gt;</span> <span class="bu">str</span>:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Devuelve el número con signo +/− y 'dec' decimales, usando el</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">    signo unicode '−' para negativos.</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    s <span class="op">=</span> <span class="ss">f"</span><span class="sc">{</span><span class="bu">abs</span>(x)<span class="sc">:.</span>{dec}f<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> (<span class="st">"+"</span> <span class="op">+</span> s) <span class="cf">if</span> x <span class="op">&gt;=</span> <span class="dv">0</span> <span class="cf">else</span> (<span class="st">"−"</span> <span class="op">+</span> s)  <span class="co"># nota: '−' U+2212</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Encabezado</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"z = </span><span class="sc">{</span>z<span class="sc">}</span><span class="ss">  |z|=</span><span class="sc">{</span><span class="bu">abs</span>(z)<span class="sc">:.6f}</span><span class="ss">  arg(z)=</span><span class="sc">{</span>cmath<span class="sc">.</span>phase(z)<span class="sc">:.6f}</span><span class="ss"> rad"</span>)</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Tabla Markdown</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"</span><span class="ch">\n</span><span class="st">| k |  Real (Wk) | Imaginario |"</span>)</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> k, w <span class="kw">in</span> <span class="bu">enumerate</span>(W):</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    re <span class="op">=</span> signo_md(w.real, <span class="dv">4</span>)</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>    im <span class="op">=</span> signo_md(w.imag, <span class="dv">4</span>)</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"| </span><span class="sc">{</span>k<span class="sc">}</span><span class="ss"> | </span><span class="sc">{</span>re<span class="sc">:&gt;10}</span><span class="ss"> | </span><span class="sc">{</span>im<span class="sc">:&gt;10}</span><span class="ss"> |"</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>z = (8+8j)  |z|=11.313708  arg(z)=0.785398 rad
 
@@ -499,7 +577,69 @@ w_0=2^{7/16}{e^{i\frac{\pi}{32}}}\approx 1.349+0.133i.
 </section>
 <section id="grafica-de-raices" class="level2">
 <h2 class="anchored" data-anchor-id="grafica-de-raices">Grafica de raices</h2>
-<div id="b277d87c" class="cell" data-execution_count="3">
+<div id="ee3c9406" class="cell" data-execution_count="3">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> cmath</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> graficar_raices(z: <span class="bu">complex</span>, n: <span class="bu">int</span>, conectar<span class="op">=</span><span class="va">True</span>, rayos<span class="op">=</span><span class="va">False</span>, circulo<span class="op">=</span><span class="va">True</span>):</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""Grafica raíces n-ésimas de z y (opcional) las conecta en orden angular."""</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    roots <span class="op">=</span> raices_n_esimas(z, n)</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> roots:</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    radio <span class="op">=</span> <span class="bu">abs</span>(roots[<span class="dv">0</span>])</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Ordenar por ángulo para conectar correctamente</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    roots_sorted <span class="op">=</span> <span class="bu">sorted</span>(roots, key<span class="op">=</span><span class="kw">lambda</span> w: cmath.phase(w))</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Coordenadas</span></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    xs <span class="op">=</span> [w.real <span class="cf">for</span> w <span class="kw">in</span> roots_sorted]</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    ys <span class="op">=</span> [w.imag <span class="cf">for</span> w <span class="kw">in</span> roots_sorted]</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Cerrar el polígono si se conecta</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> conectar <span class="kw">and</span> n <span class="op">&gt;</span> <span class="dv">1</span>:</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>        xs.append(xs[<span class="dv">0</span>])</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>        ys.append(ys[<span class="dv">0</span>])</span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Gráfica</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>    fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">5</span>,<span class="dv">5</span>))</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Círculo guía</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> circulo:</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>        ax.add_artist(plt.Circle((<span class="dv">0</span>,<span class="dv">0</span>), radio, fill<span class="op">=</span><span class="va">False</span>, linestyle<span class="op">=</span><span class="st">"--"</span>, color<span class="op">=</span><span class="st">"red"</span>, lw<span class="op">=</span><span class="dv">1</span>))</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Puntos</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>    ax.scatter([w.real <span class="cf">for</span> w <span class="kw">in</span> roots], [w.imag <span class="cf">for</span> w <span class="kw">in</span> roots],</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>               color<span class="op">=</span><span class="st">"blue"</span>, s<span class="op">=</span><span class="dv">60</span>, zorder<span class="op">=</span><span class="dv">3</span>, label<span class="op">=</span><span class="st">"Raíces"</span>)</span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Conexión (polígono)</span></span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> conectar <span class="kw">and</span> n <span class="op">&gt;</span> <span class="dv">1</span>:</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>        ax.plot(xs, ys, color<span class="op">=</span><span class="st">"blue"</span>, lw<span class="op">=</span><span class="fl">1.5</span>, alpha<span class="op">=</span><span class="fl">0.9</span>, label<span class="op">=</span><span class="st">"Polígono"</span>)</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Rayos desde el origen (opcional)</span></span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> rayos:</span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> w <span class="kw">in</span> roots:</span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>            ax.plot([<span class="dv">0</span>, w.real], [<span class="dv">0</span>, w.imag], color<span class="op">=</span><span class="st">"green"</span>, lw<span class="op">=</span><span class="fl">0.8</span>, zorder<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Etiquetas k (según orden original de generación)</span></span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> k, w <span class="kw">in</span> <span class="bu">enumerate</span>(roots):</span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>        ax.text(w.real, w.imag, <span class="ss">f"k=</span><span class="sc">{</span>k<span class="sc">}</span><span class="ss">"</span>, fontsize<span class="op">=</span><span class="dv">9</span>, va<span class="op">=</span><span class="st">"bottom"</span>, ha<span class="op">=</span><span class="st">"left"</span>)</span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Ejes y estilo</span></span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a>    ax.axhline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">"black"</span>, lw<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>    ax.axvline(<span class="dv">0</span>, color<span class="op">=</span><span class="st">"black"</span>, lw<span class="op">=</span><span class="fl">0.8</span>)</span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a>    ax.set_aspect(<span class="st">"equal"</span>, adjustable<span class="op">=</span><span class="st">"box"</span>)</span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a>    ax.set_xlabel(<span class="st">"Parte real"</span>)</span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>    ax.set_ylabel(<span class="st">"Parte imaginaria"</span>)</span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>    ax.grid(alpha<span class="op">=</span><span class="fl">0.3</span>)</span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>    ax.legend(loc<span class="op">=</span><span class="st">"upper right"</span>)</span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>    plt.tight_layout()</span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>    plt.show()</span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a><span class="co"># ==== Ejemplo del ejercicio ====</span></span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a>z <span class="op">=</span> (<span class="ot">16j</span>)<span class="op">/</span>(<span class="dv">1</span><span class="op">+</span><span class="ot">1j</span>)  <span class="co"># (16 i)/(1+i)</span></span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">8</span></span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>graficar_raices(z, n, conectar<span class="op">=</span><span class="va">True</span>, rayos<span class="op">=</span><span class="va">True</span>, circulo<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">

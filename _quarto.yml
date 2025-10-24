@@ -27,17 +27,11 @@ website:
       - series-y-transformadas.qmd
 
 format:
-  pdf:
-    pdf-engine: xelatex
-    mainfont: "EB Garamond"
-    fontsize: 11pt
-    geometry:
-      - margin=2cm
   html:
     theme:
-      light: journal  
-      dark: slate    
-    math: katex        
+      light: journal
+      dark: slate
+    math: katex
     toc: true
     number-sections: false
     smooth-scroll: true

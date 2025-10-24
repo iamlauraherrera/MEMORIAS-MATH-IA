@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -294,6 +329,12 @@ window.Quarto = {
 <span class="menu-text">Inicio</span></a>
   </li>  
 </ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./MEMORIAS-MATH-IA.pdf" target="_blank"> 
+<span class="menu-text">PDF</span></a>
+  </li>  
+</ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Alternar modo oscuro"><i class="bi"></i></a>
@@ -421,21 +462,20 @@ Dado un número ( S ) y una estimación inicial ( y_0 ), la fórmula general es:
 <p><span class="math display">\[
 y(k+1) = \frac{1}{2}\left(y_k + \frac{S}{y_k}\right)
 \]</span></p>
-<p>Cada iteración mejora la aproximación al valor real (S).<br>
-El proceso se basa en una idea equivalente al método de Newton aplicado a <span class="math display">\[
+<p>Cada iteración mejora la aproximación al valor real <span class="math inline">\(\sqrt{S}\)</span> El proceso se basa en una idea equivalente al método de Newton aplicado a <span class="math display">\[
 f(y) = y^2 - S
 \]</span> La iteración se detiene cuando la diferencia ( |y_{k+1} - y_k| ) es suficientemente pequeña.</p>
 </section>
 <section id="ejemplo-aproximación-de-raiz-cuadrada-de-2-con-y01" class="level2">
 <h2 class="anchored" data-anchor-id="ejemplo-aproximación-de-raiz-cuadrada-de-2-con-y01">Ejemplo aproximación de raiz cuadrada de 2 con <span class="math inline">\(y0=1\)</span></h2>
 <p>Aplicando el método:</p>
-[
-<span class="math display">\[\begin{aligned}
+<p><span class="math display">\[
+\begin{aligned}
 y_1 &amp;= \tfrac{1}{2}(1 + 2/1) = 1.5,\\[4pt]
 y_2 &amp;= \tfrac{1}{2}(1.5 + 2/1.5) = 1.4166,\\[4pt]
 y_3 &amp;= \tfrac{1}{2}(1.4166 + 2/1.4166) = 1.4142.
-\end{aligned}\]</span>
-<p>]</p>
+\end{aligned}
+\]</span></p>
 <p>Con solo tres iteraciones, el resultado se aproxima al valor real:</p>
 <p>raiz de 2 = 1.41421356</p>
 <p>Al elevar ( 1.4142^2 ) se obtiene aproximadamente ( 2 ), confirmando la exactitud de la aproximación.</p>
@@ -506,13 +546,40 @@ y_n = A + B\,2^n + \tfrac{1}{6}4^n.
 <h2 class="anchored" data-anchor-id="interpretación-computacional">Interpretación computacional</h2>
 <p>Las ecuaciones en diferencia pueden implementarse fácilmente en código para simular sus valores iterativos.</p>
 <p><strong>Ejemplo 1 — Método de Herón:</strong></p>
-<div id="20558fe2" class="cell" data-execution_count="1">
+<div id="93568a16" class="cell" data-execution_count="1">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> heron_sqrt(S, y0<span class="op">=</span><span class="fl">1.0</span>, tol<span class="op">=</span><span class="fl">1e-10</span>, max_iter<span class="op">=</span><span class="dv">10</span>):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Aproxima la raíz cuadrada de S mediante el método de Herón.</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> y0</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(max_iter):</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        y_next <span class="op">=</span> <span class="fl">0.5</span> <span class="op">*</span> (y <span class="op">+</span> S <span class="op">/</span> y)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="bu">abs</span>(y_next <span class="op">-</span> y) <span class="op">&lt;</span> tol:</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>            <span class="cf">break</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        y <span class="op">=</span> y_next</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> y</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Aproximación de sqrt(2):"</span>, heron_sqrt(<span class="dv">2</span>))</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Aproximación de sqrt(2): 1.4142135623746899</code></pre>
 </div>
 </div>
 <p><strong>Ejemplo 2 — Ecuación en diferencia no homogénea:</strong></p>
-<div id="3a41dff0" class="cell" data-execution_count="2">
+<div id="2423aed3" class="cell" data-execution_count="2">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> solve_second_order(a1, a0, g, y0, y1, N):</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co">    Resuelve una ecuación en diferencia del tipo:</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co">        y_{n+2} + a1*y_{n+1} + a0*y_n = g(n)</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> [y0, y1]</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">0</span>, N<span class="op">-</span><span class="dv">2</span>):</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>        y_next <span class="op">=</span> <span class="op">-</span>a1 <span class="op">*</span> y[<span class="op">-</span><span class="dv">1</span>] <span class="op">-</span> a0 <span class="op">*</span> y[<span class="op">-</span><span class="dv">2</span>] <span class="op">+</span> g(n)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>        y.append(y_next)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> y</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Ejemplo con y_{n+2} - 3y_{n+1} + 2y_n = 4^n</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> <span class="kw">lambda</span> n: <span class="dv">4</span><span class="op">**</span>n</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>seq <span class="op">=</span> solve_second_order(<span class="op">-</span><span class="dv">3</span>, <span class="dv">2</span>, g, y0<span class="op">=</span><span class="dv">0</span>, y1<span class="op">=</span><span class="dv">4</span>, N<span class="op">=</span><span class="dv">8</span>)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Secuencia y_n:"</span>, seq)</span></code></pre></div><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Secuencia y_n: [0, 4, 13, 35, 95, 279, 903, 3175]</code></pre>
 </div>
