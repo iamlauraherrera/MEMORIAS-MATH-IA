@@ -1,14 +1,16 @@
 ---
-title: "Memorias de Matemáticas para la IA"
+Titulo: "Memorias de Matemáticas para la IA"
 author: "Laura Herrera & Juan Esteban Duque"
 date: today
 toc: false              # no mostrar TOC interno en la portada
 number-sections: false  # no numerar encabezados dentro de index
 ---
-::: {.text-center}
-[📄 Descargar versión completa (PDF)]
-(memorias.pdf){.btn .btn-primary .btn-lg target="_blank" download}
-:::
+<p class="text-center">
+  <a class="btn btn-primary btn-lg" href="memorias.pdf" target="_blank" download>
+    📄 Descargar versión completa (PDF)
+  </a>
+</p>
+
 
 # Introducción
 
