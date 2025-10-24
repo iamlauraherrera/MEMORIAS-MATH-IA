@@ -1,13 +1,33 @@
-# Memorias de Matemáticas para la IA
+# MEMORIAS MATH IA
 
-Apuntes y materiales del curso (números complejos, álgebra lineal, ecuaciones en diferencia, series y transformadas, etc.) en formato Quarto.
+Notas y ejercicios de matemáticas aplicadas a IA, publicados con [Quarto](https://quarto.org/) como sitio web.
 
-## Sitio
-Cuando se publique con GitHub Pages, estará aquí: https://lauraherrera/MEMORIAS-MATH-IA/
+🔗 **Sitio en vivo:** https://iamlauraherrera.github.io/MEMORIAS-MATH-IA/
 
-## Construcción local
-- Instala [Quarto](https://quarto.org/)
-- En la raíz del repo:
-  ```bash
-  quarto render
-  quarto preview
+---
+
+## 📚 Contenido principal
+
+- `index.qmd` — Portada / índice
+- `complejos-potenciacion-radicacion.qmd`
+- `algebra-lineal.qmd`
+- `ecuaciones-en-diferencia.qmd`
+- `ecuaciones-diferenciales-finanzas.qmd`
+- `ecuaciones-logisticas.qmd`
+- `series-y-transformadas.qmd`
+
+> El orden de navegación **Anterior/Siguiente** está definido en `_quarto.yml` → `website.sidebar.contents`.
+
+---
+
+## 🧰 Requisitos
+
+- [Quarto](https://quarto.org/docs/get-started/) instalado (`quarto --version` para verificar)
+- (Opcional) Python si ejecutas celdas de código en los `.qmd`
+
+---
+
+## ▶️ Render local (HTML)
+
+```bash
+quarto render
