@@ -4,15 +4,22 @@ project:
 
 website:
   title: "MEMORIAS MATH IA"
-  description: "Notas y ejercicios de MATH + IA"
-  search: true
   navbar:
     left:
       - href: index.qmd
         text: Inicio
-    right:
-      - icon: github
-        href: https://github.com/iamlauraherrera/MEMORIAS-MATH-IA
+  sidebar:
+    style: "floating"        # menú fijo a la izquierda
+    search: true
+    collapse-level: 1
+    contents:
+      - index.qmd
+      - complejos-potenciacion-radicacion.qmd
+      - algebra-lineal.qmd
+      - ecuaciones-en-diferencia.qmd
+      - ecuaciones-diferenciales-finanzas.qmd
+      - ecuaciones-logisticas.qmd
+      - series-y-transformadas.qmd
 
 format:
   html:
@@ -24,9 +31,8 @@ format:
       dark: slate
     lang: es
 
-# Ejecuta cada .qmd una vez y guarda resultados si no cambian
 execute:
-  freeze: auto   # evita re-ejecutar si el código no cambió
+  freeze: auto
   echo: false
   warning: false
   message: false

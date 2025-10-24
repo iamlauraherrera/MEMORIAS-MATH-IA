@@ -4,363 +4,571 @@
     "href": "ecuaciones-diferenciales-finanzas.html",
     "title": "Ecuaciones en diferencia y finanzas",
     "section": "",
-    "text": "El valor futuro (F) de una inversión (P) a una tasa de interés (i) durante (n) períodos se expresa como:\n\\[\nF=P(1+i)^n\n\\] Cada período multiplica el capital por \\((1+i)\\).\nLa relación entre períodos consecutivos puede verse como: \\[\nF_n = (1+i)F_{n-1},\n\\]\nuna ecuación en diferencia que representa crecimiento exponencial discreto."
+    "text": "El valor futuro (F) de una inversión (P) a una tasa de interés (i) durante (n) períodos se expresa como:\n\\[\nF=P(1+i)^n\n\\] Cada período multiplica el capital por \\((1+i)\\).\nLa relación entre períodos consecutivos puede verse como: \\[\nF_n = (1+i)F_{n-1},\n\\]\nuna ecuación en diferencia que representa crecimiento exponencial discreto.",
+    "crumbs": [
+      "Inicio",
+      "Ecuaciones en diferencia y finanzas"
+    ]
   },
   {
     "objectID": "ecuaciones-diferenciales-finanzas.html#valor-futuro-y-fórmulas-financieras",
     "href": "ecuaciones-diferenciales-finanzas.html#valor-futuro-y-fórmulas-financieras",
     "title": "Ecuaciones en diferencia y finanzas",
     "section": "",
-    "text": "El valor futuro (F) de una inversión (P) a una tasa de interés (i) durante (n) períodos se expresa como:\n\\[\nF=P(1+i)^n\n\\] Cada período multiplica el capital por \\((1+i)\\).\nLa relación entre períodos consecutivos puede verse como: \\[\nF_n = (1+i)F_{n-1},\n\\]\nuna ecuación en diferencia que representa crecimiento exponencial discreto."
+    "text": "El valor futuro (F) de una inversión (P) a una tasa de interés (i) durante (n) períodos se expresa como:\n\\[\nF=P(1+i)^n\n\\] Cada período multiplica el capital por \\((1+i)\\).\nLa relación entre períodos consecutivos puede verse como: \\[\nF_n = (1+i)F_{n-1},\n\\]\nuna ecuación en diferencia que representa crecimiento exponencial discreto.",
+    "crumbs": [
+      "Inicio",
+      "Ecuaciones en diferencia y finanzas"
+    ]
   },
   {
     "objectID": "ecuaciones-diferenciales-finanzas.html#del-interés-compuesto-a-la-ecuación-en-diferencia",
     "href": "ecuaciones-diferenciales-finanzas.html#del-interés-compuesto-a-la-ecuación-en-diferencia",
     "title": "Ecuaciones en diferencia y finanzas",
     "section": "Del interés compuesto a la ecuación en diferencia",
-    "text": "Del interés compuesto a la ecuación en diferencia\nEl modelo discreto: \\[\nF_{n+1} = (1+i)F_n\n\\]\ndescribe el interés compuesto acumulativo.\nSi \\((i = 0.1)\\) y \\((F_0 = 1000)\\):\n\\[\n(F_1 = 1100,; F_2 = 1210,\\; F_3 = 1331, \\dots\\\n\\] Esta forma recursiva permite analizar o simular el comportamiento del dinero a lo largo del tiempo."
+    "text": "Del interés compuesto a la ecuación en diferencia\nEl modelo discreto: \\[\nF_{n+1} = (1+i)F_n\n\\]\ndescribe el interés compuesto acumulativo.\nSi \\((i = 0.1)\\) y \\((F_0 = 1000)\\):\n\\[\n(F_1 = 1100,; F_2 = 1210,\\; F_3 = 1331, \\dots\\\n\\] Esta forma recursiva permite analizar o simular el comportamiento del dinero a lo largo del tiempo.",
+    "crumbs": [
+      "Inicio",
+      "Ecuaciones en diferencia y finanzas"
+    ]
   },
   {
     "objectID": "ecuaciones-diferenciales-finanzas.html#ventajas-del-enfoque-con-ecuaciones-en-diferencia",
     "href": "ecuaciones-diferenciales-finanzas.html#ventajas-del-enfoque-con-ecuaciones-en-diferencia",
     "title": "Ecuaciones en diferencia y finanzas",
     "section": "Ventajas del enfoque con ecuaciones en diferencia",
-    "text": "Ventajas del enfoque con ecuaciones en diferencia\n\nPermite observar la evolución temporal del capital paso a paso.\n\nFacilita la simulación mediante algoritmos iterativos.\n\nAcepta términos variables, como aportes o retiros periódicos.\n\nSe adapta a análisis predictivos y de riesgo financiero."
+    "text": "Ventajas del enfoque con ecuaciones en diferencia\n\nPermite observar la evolución temporal del capital paso a paso.\n\nFacilita la simulación mediante algoritmos iterativos.\n\nAcepta términos variables, como aportes o retiros periódicos.\n\nSe adapta a análisis predictivos y de riesgo financiero.",
+    "crumbs": [
+      "Inicio",
+      "Ecuaciones en diferencia y finanzas"
+    ]
   },
   {
     "objectID": "ecuaciones-diferenciales-finanzas.html#modelos-financieros-como-ecuaciones-en-diferencia",
     "href": "ecuaciones-diferenciales-finanzas.html#modelos-financieros-como-ecuaciones-en-diferencia",
     "title": "Ecuaciones en diferencia y finanzas",
     "section": "Modelos financieros como ecuaciones en diferencia",
-    "text": "Modelos financieros como ecuaciones en diferencia\nInterés compuesto: \\[\nF_{n+1} = (1+i)F_n\n\\]\nSerie uniforme (aportes constantes (A)): \\[\nF_{n+1} = (1+i)F_n + A\n\\]\nSerie con gradiente aritmético: \\[\nF_{n+1} = (1+i)F_n + (A + Gn),\n\\]\ndonde \\(G\\) es el cambio progresivo en los pagos.\nCada uno representa una variación del modelo general de crecimiento financiero discreto."
+    "text": "Modelos financieros como ecuaciones en diferencia\nInterés compuesto: \\[\nF_{n+1} = (1+i)F_n\n\\]\nSerie uniforme (aportes constantes (A)): \\[\nF_{n+1} = (1+i)F_n + A\n\\]\nSerie con gradiente aritmético: \\[\nF_{n+1} = (1+i)F_n + (A + Gn),\n\\]\ndonde \\(G\\) es el cambio progresivo en los pagos.\nCada uno representa una variación del modelo general de crecimiento financiero discreto.",
+    "crumbs": [
+      "Inicio",
+      "Ecuaciones en diferencia y finanzas"
+    ]
   },
   {
     "objectID": "ecuaciones-diferenciales-finanzas.html#simulación-de-modelos-financieros",
     "href": "ecuaciones-diferenciales-finanzas.html#simulación-de-modelos-financieros",
     "title": "Ecuaciones en diferencia y finanzas",
     "section": "Simulación de modelos financieros",
-    "text": "Simulación de modelos financieros\nEjemplo de interés compuesto:\n\n\nPeriodo 1: F = 1100.00\nPeriodo 2: F = 1210.00\nPeriodo 3: F = 1331.00\nPeriodo 4: F = 1464.10\nPeriodo 5: F = 1610.51\n\n\nEjemplo de serie uniforme:\n\n\nPeriodo 1: F = 200.00\nPeriodo 2: F = 416.00\nPeriodo 3: F = 649.28\nPeriodo 4: F = 901.22\nPeriodo 5: F = 1173.32\nPeriodo 6: F = 1467.19\n\n\nEstas simulaciones reproducen exactamente la ecuación en diferencia asociada a cada modelo."
+    "text": "Simulación de modelos financieros\nEjemplo de interés compuesto:\n\n\nPeriodo 1: F = 1100.00\nPeriodo 2: F = 1210.00\nPeriodo 3: F = 1331.00\nPeriodo 4: F = 1464.10\nPeriodo 5: F = 1610.51\n\n\nEjemplo de serie uniforme:\n\n\nPeriodo 1: F = 200.00\nPeriodo 2: F = 416.00\nPeriodo 3: F = 649.28\nPeriodo 4: F = 901.22\nPeriodo 5: F = 1173.32\nPeriodo 6: F = 1467.19\n\n\nEstas simulaciones reproducen exactamente la ecuación en diferencia asociada a cada modelo.",
+    "crumbs": [
+      "Inicio",
+      "Ecuaciones en diferencia y finanzas"
+    ]
   },
   {
     "objectID": "ecuaciones-diferenciales-finanzas.html#interpretación-dinámica-del-valor-del-dinero",
     "href": "ecuaciones-diferenciales-finanzas.html#interpretación-dinámica-del-valor-del-dinero",
     "title": "Ecuaciones en diferencia y finanzas",
     "section": "Interpretación dinámica del valor del dinero",
-    "text": "Interpretación dinámica del valor del dinero\nLa ecuación: \\[\nF_{n+1} - F_n = iF_n\n\\] muestra que el cambio de un período a otro es proporcional al capital actual.\nRepresenta un crecimiento exponencial discreto, donde el dinero genera más valor conforme aumenta.\nEste enfoque permite modelar fenómenos financieros como inversiones, préstamos o inflación en el tiempo."
+    "text": "Interpretación dinámica del valor del dinero\nLa ecuación: \\[\nF_{n+1} - F_n = iF_n\n\\] muestra que el cambio de un período a otro es proporcional al capital actual.\nRepresenta un crecimiento exponencial discreto, donde el dinero genera más valor conforme aumenta.\nEste enfoque permite modelar fenómenos financieros como inversiones, préstamos o inflación en el tiempo.",
+    "crumbs": [
+      "Inicio",
+      "Ecuaciones en diferencia y finanzas"
+    ]
   },
   {
     "objectID": "algebra-lineal.html",
     "href": "algebra-lineal.html",
     "title": "Álgebra lineal",
     "section": "",
-    "text": "Sea el sistema\n\\[\n\\begin{cases}\n-2x-3y \\;=\\; 3,\\\\[2pt]\ny \\;=\\; 1.\n\\end{cases}\n\\]\nHallar la inversa de coeficientes y resolver el sistema.\nDada su forma matricial, \\(AX=B\\):\n\\[\nA=\\begin{bmatrix}-2 & -3\\\\[2pt] 1 & 0\\end{bmatrix},\\quad\nX=\\begin{bmatrix}x\\\\[2pt] y\\end{bmatrix},\\quad\nB=\\begin{bmatrix}3\\\\[2pt] 1\\end{bmatrix}.\n\\]\nPlanteamos la inversa generica y usamos \\(A A^{-1} = 1\\). Obtenemos: \\[\n\\begin{bmatrix}-2{\\alpha}-3{\\gamma} & -2{\\beta}-3{\\delta}\\\\[2pt] 0{\\alpha}+1{\\gamma} & 0{\\beta}+1{\\delta}\\end{bmatrix}\\quad=\\begin{bmatrix}1 & 0\\\\[2pt] 0 & 1\\end{bmatrix}\\quad\n\\]\nEntonces, se obtiene el sistema para \\({\\alpha}, {\\beta}, {\\gamma},{\\delta}\\) \\[\n-2{\\alpha}-3{\\gamma} \\;=\\; 1,\\\\\n-2{\\beta}-3{\\delta} \\;=\\; 0,\\\\\n{\\gamma} \\;=\\; 0.\\\\\n{\\delta} \\;=\\; 1.\\\n\\] Sustituimos \\({\\gamma}\\) y \\({\\delta}\\): \\[\n-2{\\alpha}-(3) · 0\\;=\\; 1,\\\\\n-2{\\beta}-(3) · 1\\;=\\; 0,\\\n\\]\n∴\n\\[\nA^{-1}=\\begin{bmatrix}-\\tfrac{1}{2} & -\\tfrac{3}{2}\\\\[2pt] 0 & 1\\end{bmatrix}.\n\\]\nComprobacion rapida\n\\[\nA A^{-1}=\\begin{bmatrix}-2 & -3\\\\[2pt] 0 & 1\\end{bmatrix} \\\n\\begin{bmatrix}-\\tfrac{1}{2} & -\\tfrac{3}{2}\\\\[2pt] 0 & 1\\end{bmatrix} =\n\\begin{bmatrix}1 & 0\\\\[2pt] 0 & 1\\end{bmatrix}.\n\\]\nResolviendo \\(X=A^{-1}B\\): \\[\n\\begin{bmatrix}x\\\\[2pt] y\\end{bmatrix}=\n\\begin{bmatrix}-\\tfrac{1}{2} & -\\tfrac{3}{2}\\\\[2pt] 0 & 1\\end{bmatrix}\\begin{bmatrix}3\\\\[2pt] 1\\end{bmatrix}\n= \\begin{bmatrix}-\\tfrac{1}{2}· 3+-\\tfrac{3}{2}· 1\\\\[2pt] 0· 3+1· 1\\end{bmatrix}=\\begin{bmatrix}-3\\\\[2pt] 1\\end{bmatrix}\n\\] Por lo tanto,\n\\[\n\\boxed{\\,x=-3,\\qquad y=1}.\n\\]"
+    "text": "Sea el sistema\n\\[\n\\begin{cases}\n-2x-3y \\;=\\; 3,\\\\[2pt]\ny \\;=\\; 1.\n\\end{cases}\n\\]\nHallar la inversa de coeficientes y resolver el sistema.\nDada su forma matricial, \\(AX=B\\):\n\\[\nA=\\begin{bmatrix}-2 & -3\\\\[2pt] 1 & 0\\end{bmatrix},\\quad\nX=\\begin{bmatrix}x\\\\[2pt] y\\end{bmatrix},\\quad\nB=\\begin{bmatrix}3\\\\[2pt] 1\\end{bmatrix}.\n\\]\nPlanteamos la inversa generica y usamos \\(A A^{-1} = 1\\). Obtenemos: \\[\n\\begin{bmatrix}-2{\\alpha}-3{\\gamma} & -2{\\beta}-3{\\delta}\\\\[2pt] 0{\\alpha}+1{\\gamma} & 0{\\beta}+1{\\delta}\\end{bmatrix}\\quad=\\begin{bmatrix}1 & 0\\\\[2pt] 0 & 1\\end{bmatrix}\\quad\n\\]\nEntonces, se obtiene el sistema para \\({\\alpha}, {\\beta}, {\\gamma},{\\delta}\\) \\[\n-2{\\alpha}-3{\\gamma} \\;=\\; 1,\\\\\n-2{\\beta}-3{\\delta} \\;=\\; 0,\\\\\n{\\gamma} \\;=\\; 0.\\\\\n{\\delta} \\;=\\; 1.\\\n\\] Sustituimos \\({\\gamma}\\) y \\({\\delta}\\): \\[\n-2{\\alpha}-(3) · 0\\;=\\; 1,\\\\\n-2{\\beta}-(3) · 1\\;=\\; 0,\\\n\\]\n∴\n\\[\nA^{-1}=\\begin{bmatrix}-\\tfrac{1}{2} & -\\tfrac{3}{2}\\\\[2pt] 0 & 1\\end{bmatrix}.\n\\]\nComprobacion rapida\n\\[\nA A^{-1}=\\begin{bmatrix}-2 & -3\\\\[2pt] 0 & 1\\end{bmatrix} \\\n\\begin{bmatrix}-\\tfrac{1}{2} & -\\tfrac{3}{2}\\\\[2pt] 0 & 1\\end{bmatrix} =\n\\begin{bmatrix}1 & 0\\\\[2pt] 0 & 1\\end{bmatrix}.\n\\]\nResolviendo \\(X=A^{-1}B\\): \\[\n\\begin{bmatrix}x\\\\[2pt] y\\end{bmatrix}=\n\\begin{bmatrix}-\\tfrac{1}{2} & -\\tfrac{3}{2}\\\\[2pt] 0 & 1\\end{bmatrix}\\begin{bmatrix}3\\\\[2pt] 1\\end{bmatrix}\n= \\begin{bmatrix}-\\tfrac{1}{2}· 3+-\\tfrac{3}{2}· 1\\\\[2pt] 0· 3+1· 1\\end{bmatrix}=\\begin{bmatrix}-3\\\\[2pt] 1\\end{bmatrix}\n\\] Por lo tanto,\n\\[\n\\boxed{\\,x=-3,\\qquad y=1}.\n\\]",
+    "crumbs": [
+      "Inicio",
+      "Álgebra lineal"
+    ]
   },
   {
     "objectID": "algebra-lineal.html#ejemplo-planteado",
     "href": "algebra-lineal.html#ejemplo-planteado",
     "title": "Álgebra lineal",
     "section": "",
-    "text": "Sea el sistema\n\\[\n\\begin{cases}\n-2x-3y \\;=\\; 3,\\\\[2pt]\ny \\;=\\; 1.\n\\end{cases}\n\\]\nHallar la inversa de coeficientes y resolver el sistema.\nDada su forma matricial, \\(AX=B\\):\n\\[\nA=\\begin{bmatrix}-2 & -3\\\\[2pt] 1 & 0\\end{bmatrix},\\quad\nX=\\begin{bmatrix}x\\\\[2pt] y\\end{bmatrix},\\quad\nB=\\begin{bmatrix}3\\\\[2pt] 1\\end{bmatrix}.\n\\]\nPlanteamos la inversa generica y usamos \\(A A^{-1} = 1\\). Obtenemos: \\[\n\\begin{bmatrix}-2{\\alpha}-3{\\gamma} & -2{\\beta}-3{\\delta}\\\\[2pt] 0{\\alpha}+1{\\gamma} & 0{\\beta}+1{\\delta}\\end{bmatrix}\\quad=\\begin{bmatrix}1 & 0\\\\[2pt] 0 & 1\\end{bmatrix}\\quad\n\\]\nEntonces, se obtiene el sistema para \\({\\alpha}, {\\beta}, {\\gamma},{\\delta}\\) \\[\n-2{\\alpha}-3{\\gamma} \\;=\\; 1,\\\\\n-2{\\beta}-3{\\delta} \\;=\\; 0,\\\\\n{\\gamma} \\;=\\; 0.\\\\\n{\\delta} \\;=\\; 1.\\\n\\] Sustituimos \\({\\gamma}\\) y \\({\\delta}\\): \\[\n-2{\\alpha}-(3) · 0\\;=\\; 1,\\\\\n-2{\\beta}-(3) · 1\\;=\\; 0,\\\n\\]\n∴\n\\[\nA^{-1}=\\begin{bmatrix}-\\tfrac{1}{2} & -\\tfrac{3}{2}\\\\[2pt] 0 & 1\\end{bmatrix}.\n\\]\nComprobacion rapida\n\\[\nA A^{-1}=\\begin{bmatrix}-2 & -3\\\\[2pt] 0 & 1\\end{bmatrix} \\\n\\begin{bmatrix}-\\tfrac{1}{2} & -\\tfrac{3}{2}\\\\[2pt] 0 & 1\\end{bmatrix} =\n\\begin{bmatrix}1 & 0\\\\[2pt] 0 & 1\\end{bmatrix}.\n\\]\nResolviendo \\(X=A^{-1}B\\): \\[\n\\begin{bmatrix}x\\\\[2pt] y\\end{bmatrix}=\n\\begin{bmatrix}-\\tfrac{1}{2} & -\\tfrac{3}{2}\\\\[2pt] 0 & 1\\end{bmatrix}\\begin{bmatrix}3\\\\[2pt] 1\\end{bmatrix}\n= \\begin{bmatrix}-\\tfrac{1}{2}· 3+-\\tfrac{3}{2}· 1\\\\[2pt] 0· 3+1· 1\\end{bmatrix}=\\begin{bmatrix}-3\\\\[2pt] 1\\end{bmatrix}\n\\] Por lo tanto,\n\\[\n\\boxed{\\,x=-3,\\qquad y=1}.\n\\]"
+    "text": "Sea el sistema\n\\[\n\\begin{cases}\n-2x-3y \\;=\\; 3,\\\\[2pt]\ny \\;=\\; 1.\n\\end{cases}\n\\]\nHallar la inversa de coeficientes y resolver el sistema.\nDada su forma matricial, \\(AX=B\\):\n\\[\nA=\\begin{bmatrix}-2 & -3\\\\[2pt] 1 & 0\\end{bmatrix},\\quad\nX=\\begin{bmatrix}x\\\\[2pt] y\\end{bmatrix},\\quad\nB=\\begin{bmatrix}3\\\\[2pt] 1\\end{bmatrix}.\n\\]\nPlanteamos la inversa generica y usamos \\(A A^{-1} = 1\\). Obtenemos: \\[\n\\begin{bmatrix}-2{\\alpha}-3{\\gamma} & -2{\\beta}-3{\\delta}\\\\[2pt] 0{\\alpha}+1{\\gamma} & 0{\\beta}+1{\\delta}\\end{bmatrix}\\quad=\\begin{bmatrix}1 & 0\\\\[2pt] 0 & 1\\end{bmatrix}\\quad\n\\]\nEntonces, se obtiene el sistema para \\({\\alpha}, {\\beta}, {\\gamma},{\\delta}\\) \\[\n-2{\\alpha}-3{\\gamma} \\;=\\; 1,\\\\\n-2{\\beta}-3{\\delta} \\;=\\; 0,\\\\\n{\\gamma} \\;=\\; 0.\\\\\n{\\delta} \\;=\\; 1.\\\n\\] Sustituimos \\({\\gamma}\\) y \\({\\delta}\\): \\[\n-2{\\alpha}-(3) · 0\\;=\\; 1,\\\\\n-2{\\beta}-(3) · 1\\;=\\; 0,\\\n\\]\n∴\n\\[\nA^{-1}=\\begin{bmatrix}-\\tfrac{1}{2} & -\\tfrac{3}{2}\\\\[2pt] 0 & 1\\end{bmatrix}.\n\\]\nComprobacion rapida\n\\[\nA A^{-1}=\\begin{bmatrix}-2 & -3\\\\[2pt] 0 & 1\\end{bmatrix} \\\n\\begin{bmatrix}-\\tfrac{1}{2} & -\\tfrac{3}{2}\\\\[2pt] 0 & 1\\end{bmatrix} =\n\\begin{bmatrix}1 & 0\\\\[2pt] 0 & 1\\end{bmatrix}.\n\\]\nResolviendo \\(X=A^{-1}B\\): \\[\n\\begin{bmatrix}x\\\\[2pt] y\\end{bmatrix}=\n\\begin{bmatrix}-\\tfrac{1}{2} & -\\tfrac{3}{2}\\\\[2pt] 0 & 1\\end{bmatrix}\\begin{bmatrix}3\\\\[2pt] 1\\end{bmatrix}\n= \\begin{bmatrix}-\\tfrac{1}{2}· 3+-\\tfrac{3}{2}· 1\\\\[2pt] 0· 3+1· 1\\end{bmatrix}=\\begin{bmatrix}-3\\\\[2pt] 1\\end{bmatrix}\n\\] Por lo tanto,\n\\[\n\\boxed{\\,x=-3,\\qquad y=1}.\n\\]",
+    "crumbs": [
+      "Inicio",
+      "Álgebra lineal"
+    ]
   },
   {
     "objectID": "algebra-lineal.html#diagonalización",
     "href": "algebra-lineal.html#diagonalización",
     "title": "Álgebra lineal",
     "section": "Diagonalización",
-    "text": "Diagonalización\nEjercicio: \\[\nA=\\begin{bmatrix}0 & -2\\\\[2pt] 1 & -3\\end{bmatrix},\\quad\n\\]\nEl polinomio característico de \\(A\\) es\n\\[\np_A(\\lambda) = \\det(A - \\lambda I) =\n\\det\\!\\begin{bmatrix}\n-\\lambda & 1\\\\\n-2 & -3 - \\lambda\n\\end{bmatrix}.\\\\\n\\\\p_A(\\lambda) = (-\\lambda)(- 3 -\\lambda) - (-2)(1)\n= \\lambda(\\lambda + 3) + 2\n= \\lambda^2 + 3\\lambda + 2.\n\\]\nFactorizamos:\n\\[\np_A(\\lambda) = (\\lambda + 1)(\\lambda + 2).\n\\]\nValores propios: \n\\[\n\\lambda_1 = -1, \\qquad \\lambda_2 = -2.\n\\]\nEspacio propio de \\(\\lambda_1 = -1\\)\nFormamos \\(A - (-1)I = A + I\\):\n\\[\nA + I =\n\\begin{bmatrix}\n1 & 1\\\\\n-2 & -2\n\\end{bmatrix}.\n\\]\nResolvemos \\((A + I)\\)\\(\\vec{t} = 0\\):\n\\[\n\\begin{bmatrix}1 & 1\\\\-2 & -2\\end{bmatrix}\n\\begin{bmatrix}\\vec{t}_1\\\\\\vec{t}_2\\end{bmatrix}\n=\\begin{bmatrix}0\\\\0\\end{bmatrix}.\n\\]\nQuiere decir que \\(\\vec{t}_1 = \\vec{t}_2\\),\nUn vector propio asociado es:\n\\[\n\\mathbf{v}_1 =\n\\begin{bmatrix}\n1\\\\\n-1\n\\end{bmatrix}.\n\\]\nEspacio propio de \\(\\lambda_2 = -2\\)\nFormamos \\(A - (-2)I = A + 2I\\):\n\\[\nA + 2I =\n\\begin{bmatrix}\n2 & 1\\\\\n-2 & -1\n\\end{bmatrix}.\n\\]\nResolvemos \\((A + 2I)\\vec{t} = 0\\):\n\\[\n\\begin{bmatrix}\n2 & 1\\\\\n-2 & -1\n\\end{bmatrix}\n\\begin{bmatrix}\n\\vec{t}_1\\\\\n\\vec{t}_2\n\\end{bmatrix}\n=\n\\begin{bmatrix}\n0\\\\\n0\n\\end{bmatrix}.\n\\]\nEsto equivale a \\(2\\vec{t}_1 + \\vec{t}_2 = 0\\), es decir, \\(\\vec{t}_2 = -2\\vec{t}_1\\).\nUn vector propio asociado es:\n\\[\n\\mathbf{v}_2 =\n\\begin{bmatrix}\n1\\\\\n-2\n\\end{bmatrix}.\n\\]\nConstrucción de \\(P\\) y \\(D\\)\nColocamos los vectores propios como columnas de \\(P\\):\n\\[\nP =\n\\begin{bmatrix}\n1 & 1\\\\\n-1 & -2\n\\end{bmatrix},\n\\qquad\nD =\n\\begin{bmatrix}\n-1 & 0\\\\\n0 & -2\n\\end{bmatrix}.\n\\]\nComprobamos que se cumple:\n\\[\nP^{-1}AP = D.\n\\] ∴ La matriz \\(A\\) es diagonalizable y hemos encontrado:\n\\[\nA = P D P^{-1}, D =\n\\text{diag}(-1, -2).\n\\]"
+    "text": "Diagonalización\nEjercicio: \\[\nA=\\begin{bmatrix}0 & -2\\\\[2pt] 1 & -3\\end{bmatrix},\\quad\n\\]\nEl polinomio característico de \\(A\\) es\n\\[\np_A(\\lambda) = \\det(A - \\lambda I) =\n\\det\\!\\begin{bmatrix}\n-\\lambda & 1\\\\\n-2 & -3 - \\lambda\n\\end{bmatrix}.\\\\\n\\\\p_A(\\lambda) = (-\\lambda)(- 3 -\\lambda) - (-2)(1)\n= \\lambda(\\lambda + 3) + 2\n= \\lambda^2 + 3\\lambda + 2.\n\\]\nFactorizamos:\n\\[\np_A(\\lambda) = (\\lambda + 1)(\\lambda + 2).\n\\]\nValores propios: \n\\[\n\\lambda_1 = -1, \\qquad \\lambda_2 = -2.\n\\]\nEspacio propio de \\(\\lambda_1 = -1\\)\nFormamos \\(A - (-1)I = A + I\\):\n\\[\nA + I =\n\\begin{bmatrix}\n1 & 1\\\\\n-2 & -2\n\\end{bmatrix}.\n\\]\nResolvemos \\((A + I)\\)\\(\\vec{t} = 0\\):\n\\[\n\\begin{bmatrix}1 & 1\\\\-2 & -2\\end{bmatrix}\n\\begin{bmatrix}\\vec{t}_1\\\\\\vec{t}_2\\end{bmatrix}\n=\\begin{bmatrix}0\\\\0\\end{bmatrix}.\n\\]\nQuiere decir que \\(\\vec{t}_1 = \\vec{t}_2\\),\nUn vector propio asociado es:\n\\[\n\\mathbf{v}_1 =\n\\begin{bmatrix}\n1\\\\\n-1\n\\end{bmatrix}.\n\\]\nEspacio propio de \\(\\lambda_2 = -2\\)\nFormamos \\(A - (-2)I = A + 2I\\):\n\\[\nA + 2I =\n\\begin{bmatrix}\n2 & 1\\\\\n-2 & -1\n\\end{bmatrix}.\n\\]\nResolvemos \\((A + 2I)\\vec{t} = 0\\):\n\\[\n\\begin{bmatrix}\n2 & 1\\\\\n-2 & -1\n\\end{bmatrix}\n\\begin{bmatrix}\n\\vec{t}_1\\\\\n\\vec{t}_2\n\\end{bmatrix}\n=\n\\begin{bmatrix}\n0\\\\\n0\n\\end{bmatrix}.\n\\]\nEsto equivale a \\(2\\vec{t}_1 + \\vec{t}_2 = 0\\), es decir, \\(\\vec{t}_2 = -2\\vec{t}_1\\).\nUn vector propio asociado es:\n\\[\n\\mathbf{v}_2 =\n\\begin{bmatrix}\n1\\\\\n-2\n\\end{bmatrix}.\n\\]\nConstrucción de \\(P\\) y \\(D\\)\nColocamos los vectores propios como columnas de \\(P\\):\n\\[\nP =\n\\begin{bmatrix}\n1 & 1\\\\\n-1 & -2\n\\end{bmatrix},\n\\qquad\nD =\n\\begin{bmatrix}\n-1 & 0\\\\\n0 & -2\n\\end{bmatrix}.\n\\]\nComprobamos que se cumple:\n\\[\nP^{-1}AP = D.\n\\] ∴ La matriz \\(A\\) es diagonalizable y hemos encontrado:\n\\[\nA = P D P^{-1}, D =\n\\text{diag}(-1, -2).\n\\]",
+    "crumbs": [
+      "Inicio",
+      "Álgebra lineal"
+    ]
   },
   {
     "objectID": "algebra-lineal.html#ejercicio-matriz-3x3",
     "href": "algebra-lineal.html#ejercicio-matriz-3x3",
     "title": "Álgebra lineal",
     "section": "Ejercicio matriz \\(3x3\\)",
-    "text": "Ejercicio matriz \\(3x3\\)\n\\[\nA=\\begin{bmatrix}2 & 1 & 0\\\\[2pt] 0 & 2 & 0\\\\[2pt]\\ 0 & 0 & 2\\\\[2pt]\\end{bmatrix},\\quad\n\\]"
+    "text": "Ejercicio matriz \\(3x3\\)\n\\[\nA=\\begin{bmatrix}2 & 1 & 0\\\\[2pt] 0 & 2 & 0\\\\[2pt]\\ 0 & 0 & 2\\\\[2pt]\\end{bmatrix},\\quad\n\\]",
+    "crumbs": [
+      "Inicio",
+      "Álgebra lineal"
+    ]
   },
   {
     "objectID": "algebra-lineal.html#polinomio-característico",
     "href": "algebra-lineal.html#polinomio-característico",
     "title": "Álgebra lineal",
     "section": "Polinomio característico",
-    "text": "Polinomio característico\nEl polinomio característico de \\(A\\) es \\[\np_A(\\lambda) = \\det(A - \\lambda I)\n= \\det\n\\begin{bmatrix}\n2 - \\lambda & 1 & 0\\\\\n0 & 2 - \\lambda & 0\\\\\n0 & 0 & 2 - \\lambda\n\\end{bmatrix}.\n\\]\nComo la matriz es triangular superior, el determinante es el producto de los elementos de la diagonal:\n\\[\np_A(\\lambda) = (2 - \\lambda)^3.\n\\]\nPor lo tanto, el único valor propio es:\n\\[\n\\lambda = 2,\n\\]\ncon multiplicidad algebraica \\[m_a = 3\\]."
+    "text": "Polinomio característico\nEl polinomio característico de \\(A\\) es \\[\np_A(\\lambda) = \\det(A - \\lambda I)\n= \\det\n\\begin{bmatrix}\n2 - \\lambda & 1 & 0\\\\\n0 & 2 - \\lambda & 0\\\\\n0 & 0 & 2 - \\lambda\n\\end{bmatrix}.\n\\]\nComo la matriz es triangular superior, el determinante es el producto de los elementos de la diagonal:\n\\[\np_A(\\lambda) = (2 - \\lambda)^3.\n\\]\nPor lo tanto, el único valor propio es:\n\\[\n\\lambda = 2,\n\\]\ncon multiplicidad algebraica \\[m_a = 3\\].",
+    "crumbs": [
+      "Inicio",
+      "Álgebra lineal"
+    ]
   },
   {
     "objectID": "algebra-lineal.html#vectores-propios",
     "href": "algebra-lineal.html#vectores-propios",
     "title": "Álgebra lineal",
     "section": "Vectores propios",
-    "text": "Vectores propios\nVectores propios: Vamos a resolver\n\\[\n(A - 2I)\\vec{t} = 0,\n\\]\nes decir,\n\\[\nA - 2I =\n\\begin{bmatrix}\n0 & 1 & 0\\\\\n0 & 0 & 0\\\\\n0 & 0 & 0\n\\end{bmatrix}.\n\\]\nSea \\(\\vec{t} = \\begin{bmatrix} \\vec{t}_1 \\\\ \\vec{t}_2 \\\\ \\vec{t}_3 \\end{bmatrix}\\), el sistema resulta:\n\\[\n\\vec{t}_2 = 0,\n\\]\ncon \\(\\vec{t}_1, \\vec{t}_3\\) libres. ∴\n\\[\n\\vec{t} =\n\\begin{bmatrix}\n\\vec{t}_1\\\\\n0\\\\\n\\vec{t}_3\n\\end{bmatrix}\n= \\vec{t}_1\n\\begin{bmatrix}\n1\\\\\n0\\\\\n0\n\\end{bmatrix}\n+ \\vec{t}_3\n\\begin{bmatrix}\n0\\\\\n0\\\\\n1\n\\end{bmatrix}.\n\\]\nEspacio propio: El espacio propio asociado a \\(\\lambda = 2\\) está generado por:\n\\[\n\\mathbf{v}_1 =\n\\begin{bmatrix}\n1\\\\\n0\\\\\n0\n\\end{bmatrix},\n\\qquad\n\\mathbf{v}_2 =\n\\begin{bmatrix}\n0\\\\\n0\\\\\n1\n\\end{bmatrix}.\n\\]\n∴, \\(A\\) no es diagonalizable (solo tiene dos vectores propios linealmente independientes para una matriz de orden 3)."
+    "text": "Vectores propios\nVectores propios: Vamos a resolver\n\\[\n(A - 2I)\\vec{t} = 0,\n\\]\nes decir,\n\\[\nA - 2I =\n\\begin{bmatrix}\n0 & 1 & 0\\\\\n0 & 0 & 0\\\\\n0 & 0 & 0\n\\end{bmatrix}.\n\\]\nSea \\(\\vec{t} = \\begin{bmatrix} \\vec{t}_1 \\\\ \\vec{t}_2 \\\\ \\vec{t}_3 \\end{bmatrix}\\), el sistema resulta:\n\\[\n\\vec{t}_2 = 0,\n\\]\ncon \\(\\vec{t}_1, \\vec{t}_3\\) libres. ∴\n\\[\n\\vec{t} =\n\\begin{bmatrix}\n\\vec{t}_1\\\\\n0\\\\\n\\vec{t}_3\n\\end{bmatrix}\n= \\vec{t}_1\n\\begin{bmatrix}\n1\\\\\n0\\\\\n0\n\\end{bmatrix}\n+ \\vec{t}_3\n\\begin{bmatrix}\n0\\\\\n0\\\\\n1\n\\end{bmatrix}.\n\\]\nEspacio propio: El espacio propio asociado a \\(\\lambda = 2\\) está generado por:\n\\[\n\\mathbf{v}_1 =\n\\begin{bmatrix}\n1\\\\\n0\\\\\n0\n\\end{bmatrix},\n\\qquad\n\\mathbf{v}_2 =\n\\begin{bmatrix}\n0\\\\\n0\\\\\n1\n\\end{bmatrix}.\n\\]\n∴, \\(A\\) no es diagonalizable (solo tiene dos vectores propios linealmente independientes para una matriz de orden 3).",
+    "crumbs": [
+      "Inicio",
+      "Álgebra lineal"
+    ]
   },
   {
     "objectID": "algebra-lineal.html#comprobación-computacional-en-python",
     "href": "algebra-lineal.html#comprobación-computacional-en-python",
     "title": "Álgebra lineal",
     "section": "Comprobación computacional en Python",
-    "text": "Comprobación computacional en Python\n\n\nMatriz A =\n⎡2  1  0⎤\n⎢       ⎥\n⎢0  2  0⎥\n⎢       ⎥\n⎣0  0  2⎦\n\nValores propios (m_a):\n  λ = 2   (m_a = 3)\n\nEspacio propio para λ = 2:  (A - λI) v = 0\nA - λI =\n⎡0  1  0⎤\n⎢       ⎥\n⎢0  0  0⎥\n⎢       ⎥\n⎣0  0  0⎦\n\nBase del espacio propio:\n  v_1 = \n⎡1⎤\n⎢ ⎥\n⎢0⎥\n⎢ ⎥\n⎣0⎦\n\n  v_2 = \n⎡0⎤\n⎢ ⎥\n⎢0⎥\n⎢ ⎥\n⎣1⎦\n\nMultiplicidad geométrica m_g(λ=2) = 2\n\n¿A es diagonalizable?\n  Suma de multiplicidades geométricas = 2 (n = 3)\n  Resultado: NO\n\nExplicación:\n  No hay suficientes eigenvectores linealmente independientes para formar P."
+    "text": "Comprobación computacional en Python\n\n\nMatriz A =\n⎡2  1  0⎤\n⎢       ⎥\n⎢0  2  0⎥\n⎢       ⎥\n⎣0  0  2⎦\n\nValores propios (m_a):\n  λ = 2   (m_a = 3)\n\nEspacio propio para λ = 2:  (A - λI) v = 0\nA - λI =\n⎡0  1  0⎤\n⎢       ⎥\n⎢0  0  0⎥\n⎢       ⎥\n⎣0  0  0⎦\n\nBase del espacio propio:\n  v_1 = \n⎡1⎤\n⎢ ⎥\n⎢0⎥\n⎢ ⎥\n⎣0⎦\n\n  v_2 = \n⎡0⎤\n⎢ ⎥\n⎢0⎥\n⎢ ⎥\n⎣1⎦\n\nMultiplicidad geométrica m_g(λ=2) = 2\n\n¿A es diagonalizable?\n  Suma de multiplicidades geométricas = 2 (n = 3)\n  Resultado: NO\n\nExplicación:\n  No hay suficientes eigenvectores linealmente independientes para formar P.",
+    "crumbs": [
+      "Inicio",
+      "Álgebra lineal"
+    ]
   },
   {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Memorias de Matemáticas para la IA",
     "section": "",
-    "text": "Estas memorias sintetizan los contenidos del curso y su conexión con la práctica computacional.\n\n\n\nPotenciación y radicación de complejos\nÁlgebra lineal\nEcuaciones en diferencia\nEcuaciones diferenciales y su relación en finanzas\nEcuaciones logísticas\nSeries y transformadas"
+    "text": "Estas memorias sintetizan los contenidos del curso y su conexión con la práctica computacional.\n\n\n\nPotenciación y radicación de complejos\nÁlgebra lineal\nEcuaciones en diferencia\nEcuaciones diferenciales y su relación en finanzas\nEcuaciones logísticas\nSeries y transformadas",
+    "crumbs": [
+      "Inicio",
+      "Memorias de Matemáticas para la IA"
+    ]
   },
   {
     "objectID": "index.html#organización-de-las-memorias-6-temas",
     "href": "index.html#organización-de-las-memorias-6-temas",
     "title": "Memorias de Matemáticas para la IA",
     "section": "",
-    "text": "Potenciación y radicación de complejos\nÁlgebra lineal\nEcuaciones en diferencia\nEcuaciones diferenciales y su relación en finanzas\nEcuaciones logísticas\nSeries y transformadas"
+    "text": "Potenciación y radicación de complejos\nÁlgebra lineal\nEcuaciones en diferencia\nEcuaciones diferenciales y su relación en finanzas\nEcuaciones logísticas\nSeries y transformadas",
+    "crumbs": [
+      "Inicio",
+      "Memorias de Matemáticas para la IA"
+    ]
   },
   {
     "objectID": "series-y-transformadas.html",
     "href": "series-y-transformadas.html",
     "title": "Series de Fourier y otras transformadas",
     "section": "",
-    "text": "Sea \\(f\\) una función periódica de período \\(2L\\) que cumple condiciones de Dirichlet. Entonces puede representarse como:\n\\[\nf(x) \\sim \\frac{a_0}{2} + \\sum_{n=1}^{\\infty} \\Big[ a_n \\cos\\!\\big(\\tfrac{n\\pi x}{L}\\big) + b_n \\sin\\!\\big(\\tfrac{n\\pi x}{L}\\big) \\Big].\n\\]\nEn puntos de continuidad, la serie converge a \\(f(x)\\); en discontinuidades converge al promedio lateral \\(\\tfrac{f(x^-)+f(x^+)}{2}\\)."
+    "text": "Sea \\(f\\) una función periódica de período \\(2L\\) que cumple condiciones de Dirichlet. Entonces puede representarse como:\n\\[\nf(x) \\sim \\frac{a_0}{2} + \\sum_{n=1}^{\\infty} \\Big[ a_n \\cos\\!\\big(\\tfrac{n\\pi x}{L}\\big) + b_n \\sin\\!\\big(\\tfrac{n\\pi x}{L}\\big) \\Big].\n\\]\nEn puntos de continuidad, la serie converge a \\(f(x)\\); en discontinuidades converge al promedio lateral \\(\\tfrac{f(x^-)+f(x^+)}{2}\\).",
+    "crumbs": [
+      "Inicio",
+      "Series de Fourier y otras transformadas"
+    ]
   },
   {
     "objectID": "series-y-transformadas.html#series-de-fourier-idea-general",
     "href": "series-y-transformadas.html#series-de-fourier-idea-general",
     "title": "Series de Fourier y otras transformadas",
     "section": "",
-    "text": "Sea \\(f\\) una función periódica de período \\(2L\\) que cumple condiciones de Dirichlet. Entonces puede representarse como:\n\\[\nf(x) \\sim \\frac{a_0}{2} + \\sum_{n=1}^{\\infty} \\Big[ a_n \\cos\\!\\big(\\tfrac{n\\pi x}{L}\\big) + b_n \\sin\\!\\big(\\tfrac{n\\pi x}{L}\\big) \\Big].\n\\]\nEn puntos de continuidad, la serie converge a \\(f(x)\\); en discontinuidades converge al promedio lateral \\(\\tfrac{f(x^-)+f(x^+)}{2}\\)."
+    "text": "Sea \\(f\\) una función periódica de período \\(2L\\) que cumple condiciones de Dirichlet. Entonces puede representarse como:\n\\[\nf(x) \\sim \\frac{a_0}{2} + \\sum_{n=1}^{\\infty} \\Big[ a_n \\cos\\!\\big(\\tfrac{n\\pi x}{L}\\big) + b_n \\sin\\!\\big(\\tfrac{n\\pi x}{L}\\big) \\Big].\n\\]\nEn puntos de continuidad, la serie converge a \\(f(x)\\); en discontinuidades converge al promedio lateral \\(\\tfrac{f(x^-)+f(x^+)}{2}\\).",
+    "crumbs": [
+      "Inicio",
+      "Series de Fourier y otras transformadas"
+    ]
   },
   {
     "objectID": "series-y-transformadas.html#coeficientes-período-2l",
     "href": "series-y-transformadas.html#coeficientes-período-2l",
     "title": "Series de Fourier y otras transformadas",
     "section": "Coeficientes (período \\(2L\\))",
-    "text": "Coeficientes (período \\(2L\\))\n\\[\na_0 = \\frac{1}{L}\\int_{-L}^{L} f(x)\\,dx,\\qquad\na_n = \\frac{1}{L}\\int_{-L}^{L} f(x)\\cos\\!\\big(\\tfrac{n\\pi x}{L}\\big)\\,dx,\\qquad\nb_n = \\frac{1}{L}\\int_{-L}^{L} f(x)\\sin\\!\\big(\\tfrac{n\\pi x}{L}\\big)\\,dx.\n\\]\nCaso \\(L=\\pi\\) (período \\(2\\pi\\))): \\[\na_0 = \\frac{1}{\\pi}\\int_{-\\pi}^{\\pi} f(x)\\,dx,\\qquad\na_n = \\frac{1}{\\pi}\\int_{-\\pi}^{\\pi} f(x)\\cos(nx)\\,dx,\\qquad\nb_n = \\frac{1}{\\pi}\\int_{-\\pi}^{\\pi} f(x)\\sin(nx)\\,dx.\n\\]"
+    "text": "Coeficientes (período \\(2L\\))\n\\[\na_0 = \\frac{1}{L}\\int_{-L}^{L} f(x)\\,dx,\\qquad\na_n = \\frac{1}{L}\\int_{-L}^{L} f(x)\\cos\\!\\big(\\tfrac{n\\pi x}{L}\\big)\\,dx,\\qquad\nb_n = \\frac{1}{L}\\int_{-L}^{L} f(x)\\sin\\!\\big(\\tfrac{n\\pi x}{L}\\big)\\,dx.\n\\]\nCaso \\(L=\\pi\\) (período \\(2\\pi\\))): \\[\na_0 = \\frac{1}{\\pi}\\int_{-\\pi}^{\\pi} f(x)\\,dx,\\qquad\na_n = \\frac{1}{\\pi}\\int_{-\\pi}^{\\pi} f(x)\\cos(nx)\\,dx,\\qquad\nb_n = \\frac{1}{\\pi}\\int_{-\\pi}^{\\pi} f(x)\\sin(nx)\\,dx.\n\\]",
+    "crumbs": [
+      "Inicio",
+      "Series de Fourier y otras transformadas"
+    ]
   },
   {
     "objectID": "series-y-transformadas.html#forma-compleja",
     "href": "series-y-transformadas.html#forma-compleja",
     "title": "Series de Fourier y otras transformadas",
     "section": "Forma compleja",
-    "text": "Forma compleja\n\\[\nf(x) \\sim \\sum_{n=-\\infty}^{\\infty} c_n e^{i n\\pi x/L}, \\quad c_n = \\frac{1}{2L}\\int_{-L}^{L} f(x) e^{-i n\\pi x/L}\\,dx.\n\\]\nRelación con \\(a_n,b_n\\) para \\(L=\\pi\\): \\[\nc_0 = \\frac{a_0}{2}, \\quad c_{\\pm n} = \\tfrac{1}{2}(a_n \\mp i b_n).\n\\]"
+    "text": "Forma compleja\n\\[\nf(x) \\sim \\sum_{n=-\\infty}^{\\infty} c_n e^{i n\\pi x/L}, \\quad c_n = \\frac{1}{2L}\\int_{-L}^{L} f(x) e^{-i n\\pi x/L}\\,dx.\n\\]\nRelación con \\(a_n,b_n\\) para \\(L=\\pi\\): \\[\nc_0 = \\frac{a_0}{2}, \\quad c_{\\pm n} = \\tfrac{1}{2}(a_n \\mp i b_n).\n\\]",
+    "crumbs": [
+      "Inicio",
+      "Series de Fourier y otras transformadas"
+    ]
   },
   {
     "objectID": "series-y-transformadas.html#simetrías-útiles",
     "href": "series-y-transformadas.html#simetrías-útiles",
     "title": "Series de Fourier y otras transformadas",
     "section": "Simetrías útiles",
-    "text": "Simetrías útiles\n\nSi \\(f\\) es par \\(f(-x)=f(x)\\): \\(b_n=0\\) → serie solo de cosenos.\nSi \\(f\\) es impar \\(f(-x)=-f(x)\\): \\(a_0=0,a_n=0\\) → serie solo de senos."
+    "text": "Simetrías útiles\n\nSi \\(f\\) es par \\(f(-x)=f(x)\\): \\(b_n=0\\) → serie solo de cosenos.\nSi \\(f\\) es impar \\(f(-x)=-f(x)\\): \\(a_0=0,a_n=0\\) → serie solo de senos.",
+    "crumbs": [
+      "Inicio",
+      "Series de Fourier y otras transformadas"
+    ]
   },
   {
     "objectID": "series-y-transformadas.html#series-de-medio-rango",
     "href": "series-y-transformadas.html#series-de-medio-rango",
     "title": "Series de Fourier y otras transformadas",
     "section": "Series de medio rango",
-    "text": "Series de medio rango\nSenos (extensión impar): \\[\nf(x) \\sim \\sum_{n=1}^{\\infty} B_n \\sin\\!\\big(\\tfrac{n\\pi x}{L}\\big), \\quad B_n = \\frac{2}{L}\\int_{0}^{L} f(x)\\sin\\!\\big(\\tfrac{n\\pi x}{L}\\big)\\,dx.\n\\]\nCosenos (extensión par):\n\\[\nf(x) \\sim \\frac{A_0}{2} + \\sum_{n=1}^{\\infty} A_n \\cos\\!\\big(\\tfrac{n\\pi x}{L}\\big), \\quad\nA_n = \\frac{2}{L}\\int_{0}^{L} f(x)\\cos\\!\\big(\\tfrac{n\\pi x}{L}\\big)\\,dx.\n\\]"
+    "text": "Series de medio rango\nSenos (extensión impar): \\[\nf(x) \\sim \\sum_{n=1}^{\\infty} B_n \\sin\\!\\big(\\tfrac{n\\pi x}{L}\\big), \\quad B_n = \\frac{2}{L}\\int_{0}^{L} f(x)\\sin\\!\\big(\\tfrac{n\\pi x}{L}\\big)\\,dx.\n\\]\nCosenos (extensión par):\n\\[\nf(x) \\sim \\frac{A_0}{2} + \\sum_{n=1}^{\\infty} A_n \\cos\\!\\big(\\tfrac{n\\pi x}{L}\\big), \\quad\nA_n = \\frac{2}{L}\\int_{0}^{L} f(x)\\cos\\!\\big(\\tfrac{n\\pi x}{L}\\big)\\,dx.\n\\]",
+    "crumbs": [
+      "Inicio",
+      "Series de Fourier y otras transformadas"
+    ]
   },
   {
     "objectID": "series-y-transformadas.html#convergencia-y-energía",
     "href": "series-y-transformadas.html#convergencia-y-energía",
     "title": "Series de Fourier y otras transformadas",
     "section": "Convergencia y energía",
-    "text": "Convergencia y energía\nCriterio de Dirichlet: si \\(f\\) es acotada y suave a trozos, su serie de Fourier converge a \\(f(x)\\) en puntos de continuidad y al promedio en saltos. Parseval: \\[\n\\frac{1}{L}\\int_{-L}^{L} |f(x)|^2\\,dx = \\frac{a_0^2}{2} + \\sum_{n=1}^{\\infty} (a_n^2 + b_n^2).\n\\]"
+    "text": "Convergencia y energía\nCriterio de Dirichlet: si \\(f\\) es acotada y suave a trozos, su serie de Fourier converge a \\(f(x)\\) en puntos de continuidad y al promedio en saltos. Parseval: \\[\n\\frac{1}{L}\\int_{-L}^{L} |f(x)|^2\\,dx = \\frac{a_0^2}{2} + \\sum_{n=1}^{\\infty} (a_n^2 + b_n^2).\n\\]",
+    "crumbs": [
+      "Inicio",
+      "Series de Fourier y otras transformadas"
+    ]
   },
   {
     "objectID": "series-y-transformadas.html#ejemplos-típicos",
     "href": "series-y-transformadas.html#ejemplos-típicos",
     "title": "Series de Fourier y otras transformadas",
     "section": "Ejemplos típicos",
-    "text": "Ejemplos típicos\n1. \\(f(x)=x\\) (impar, período \\(2\\pi\\)): \\[\nx = 2 \\sum_{n=1}^{\\infty} \\frac{(-1)^{n+1}}{n}\\sin(nx).\n\\]\n2. Onda cuadrada: \\(f(x)=\\operatorname{sgn}(\\sin x)\\) → \\[\nf(x) = \\frac{4}{\\pi} \\sum_{k=0}^{\\infty} \\frac{1}{2k+1}\\sin((2k+1)x).\n\\]\n3. Diente de sierra: \\(f(x)=x/\\pi\\) → \\[\nf(x) = \\frac{2}{\\pi} \\sum_{n=1}^{\\infty} \\frac{(-1)^{n+1}}{n}\\sin(nx).\n\\]"
+    "text": "Ejemplos típicos\n1. \\(f(x)=x\\) (impar, período \\(2\\pi\\)): \\[\nx = 2 \\sum_{n=1}^{\\infty} \\frac{(-1)^{n+1}}{n}\\sin(nx).\n\\]\n2. Onda cuadrada: \\(f(x)=\\operatorname{sgn}(\\sin x)\\) → \\[\nf(x) = \\frac{4}{\\pi} \\sum_{k=0}^{\\infty} \\frac{1}{2k+1}\\sin((2k+1)x).\n\\]\n3. Diente de sierra: \\(f(x)=x/\\pi\\) → \\[\nf(x) = \\frac{2}{\\pi} \\sum_{n=1}^{\\infty} \\frac{(-1)^{n+1}}{n}\\sin(nx).\n\\]",
+    "crumbs": [
+      "Inicio",
+      "Series de Fourier y otras transformadas"
+    ]
   },
   {
     "objectID": "series-y-transformadas.html#demostración-numérica-serie-parcial-de-fxx",
     "href": "series-y-transformadas.html#demostración-numérica-serie-parcial-de-fxx",
     "title": "Series de Fourier y otras transformadas",
     "section": "Demostración numérica: serie parcial de f(x)=x",
-    "text": "Demostración numérica: serie parcial de f(x)=x"
+    "text": "Demostración numérica: serie parcial de f(x)=x",
+    "crumbs": [
+      "Inicio",
+      "Series de Fourier y otras transformadas"
+    ]
   },
   {
     "objectID": "series-y-transformadas.html#transformada-discreta-de-fourier-dft",
     "href": "series-y-transformadas.html#transformada-discreta-de-fourier-dft",
     "title": "Series de Fourier y otras transformadas",
     "section": "Transformada Discreta de Fourier (DFT)",
-    "text": "Transformada Discreta de Fourier (DFT)\n\\[\nX[k] = \\sum_{n=0}^{N-1} x[n] e^{-i 2\\pi kn/N},\\quad k=0,\\dots,N-1.\n\\]\nEjemplo: onda cuadrada y su espectro"
+    "text": "Transformada Discreta de Fourier (DFT)\n\\[\nX[k] = \\sum_{n=0}^{N-1} x[n] e^{-i 2\\pi kn/N},\\quad k=0,\\dots,N-1.\n\\]\nEjemplo: onda cuadrada y su espectro",
+    "crumbs": [
+      "Inicio",
+      "Series de Fourier y otras transformadas"
+    ]
   },
   {
     "objectID": "series-y-transformadas.html#otras-transformadas",
     "href": "series-y-transformadas.html#otras-transformadas",
     "title": "Series de Fourier y otras transformadas",
     "section": "Otras transformadas",
-    "text": "Otras transformadas\n\nTransformada de Fourier continua:\n\\[\n\\mathcal{F}\\{f\\}(\\omega) = \\int_{-\\infty}^{\\infty} f(t)e^{-i\\omega t}\\,dt.\n\\]\nTransformada de Laplace:\n\\[\n\\mathcal{L}\\{f\\}(s) = \\int_{0}^{\\infty} f(t)e^{-st}\\,dt.\n\\]\nTransformada Z:\n\\[\nX(z) = \\sum_{n=0}^{\\infty} x[n]z^{-n}.\n\\] Cada una generaliza la idea de la serie de Fourier a dominios distintos (continuo, discreto o complejo). ## Conclusión\n\nLas series de Fourier y sus transformadas asociadas son herramientas esenciales para el análisis de señales, resolución de ecuaciones diferenciales y modelado de fenómenos periódicos o transitorios."
+    "text": "Otras transformadas\n\nTransformada de Fourier continua:\n\\[\n\\mathcal{F}\\{f\\}(\\omega) = \\int_{-\\infty}^{\\infty} f(t)e^{-i\\omega t}\\,dt.\n\\]\nTransformada de Laplace:\n\\[\n\\mathcal{L}\\{f\\}(s) = \\int_{0}^{\\infty} f(t)e^{-st}\\,dt.\n\\]\nTransformada Z:\n\\[\nX(z) = \\sum_{n=0}^{\\infty} x[n]z^{-n}.\n\\] Cada una generaliza la idea de la serie de Fourier a dominios distintos (continuo, discreto o complejo). ## Conclusión\n\nLas series de Fourier y sus transformadas asociadas son herramientas esenciales para el análisis de señales, resolución de ecuaciones diferenciales y modelado de fenómenos periódicos o transitorios.",
+    "crumbs": [
+      "Inicio",
+      "Series de Fourier y otras transformadas"
+    ]
   },
   {
     "objectID": "ecuaciones-en-diferencia.html",
     "href": "ecuaciones-en-diferencia.html",
     "title": "Ecuaciones en diferencia y métodos de aproximación",
     "section": "",
-    "text": "El método de Herón, también llamado método babilónico, es un procedimiento iterativo para calcular raíces cuadradas.\nDado un número ( S ) y una estimación inicial ( y_0 ), la fórmula general es:\n\\[\ny(k+1) = \\frac{1}{2}\\left(y_k + \\frac{S}{y_k}\\right)\n\\]\nCada iteración mejora la aproximación al valor real (S).\nEl proceso se basa en una idea equivalente al método de Newton aplicado a \\[\nf(y) = y^2 - S\n\\] La iteración se detiene cuando la diferencia ( |y_{k+1} - y_k| ) es suficientemente pequeña."
+    "text": "El método de Herón, también llamado método babilónico, es un procedimiento iterativo para calcular raíces cuadradas.\nDado un número ( S ) y una estimación inicial ( y_0 ), la fórmula general es:\n\\[\ny(k+1) = \\frac{1}{2}\\left(y_k + \\frac{S}{y_k}\\right)\n\\]\nCada iteración mejora la aproximación al valor real (S).\nEl proceso se basa en una idea equivalente al método de Newton aplicado a \\[\nf(y) = y^2 - S\n\\] La iteración se detiene cuando la diferencia ( |y_{k+1} - y_k| ) es suficientemente pequeña.",
+    "crumbs": [
+      "Inicio",
+      "Ecuaciones en diferencia y métodos de aproximación"
+    ]
   },
   {
     "objectID": "ecuaciones-en-diferencia.html#método-de-herón-para-aproximar-raíces-cuadradas",
     "href": "ecuaciones-en-diferencia.html#método-de-herón-para-aproximar-raíces-cuadradas",
     "title": "Ecuaciones en diferencia y métodos de aproximación",
     "section": "",
-    "text": "El método de Herón, también llamado método babilónico, es un procedimiento iterativo para calcular raíces cuadradas.\nDado un número ( S ) y una estimación inicial ( y_0 ), la fórmula general es:\n\\[\ny(k+1) = \\frac{1}{2}\\left(y_k + \\frac{S}{y_k}\\right)\n\\]\nCada iteración mejora la aproximación al valor real (S).\nEl proceso se basa en una idea equivalente al método de Newton aplicado a \\[\nf(y) = y^2 - S\n\\] La iteración se detiene cuando la diferencia ( |y_{k+1} - y_k| ) es suficientemente pequeña."
+    "text": "El método de Herón, también llamado método babilónico, es un procedimiento iterativo para calcular raíces cuadradas.\nDado un número ( S ) y una estimación inicial ( y_0 ), la fórmula general es:\n\\[\ny(k+1) = \\frac{1}{2}\\left(y_k + \\frac{S}{y_k}\\right)\n\\]\nCada iteración mejora la aproximación al valor real (S).\nEl proceso se basa en una idea equivalente al método de Newton aplicado a \\[\nf(y) = y^2 - S\n\\] La iteración se detiene cuando la diferencia ( |y_{k+1} - y_k| ) es suficientemente pequeña.",
+    "crumbs": [
+      "Inicio",
+      "Ecuaciones en diferencia y métodos de aproximación"
+    ]
   },
   {
     "objectID": "ecuaciones-en-diferencia.html#ejemplo-aproximación-de-raiz-cuadrada-de-2-con-y01",
     "href": "ecuaciones-en-diferencia.html#ejemplo-aproximación-de-raiz-cuadrada-de-2-con-y01",
     "title": "Ecuaciones en diferencia y métodos de aproximación",
     "section": "Ejemplo aproximación de raiz cuadrada de 2 con \\(y0=1\\)",
-    "text": "Ejemplo aproximación de raiz cuadrada de 2 con \\(y0=1\\)\nAplicando el método:\n[\n\\[\\begin{aligned}\ny_1 &= \\tfrac{1}{2}(1 + 2/1) = 1.5,\\\\[4pt]\ny_2 &= \\tfrac{1}{2}(1.5 + 2/1.5) = 1.4166,\\\\[4pt]\ny_3 &= \\tfrac{1}{2}(1.4166 + 2/1.4166) = 1.4142.\n\\end{aligned}\\]\n]\nCon solo tres iteraciones, el resultado se aproxima al valor real:\nraiz de 2 = 1.41421356\nAl elevar ( 1.4142^2 ) se obtiene aproximadamente ( 2 ), confirmando la exactitud de la aproximación."
+    "text": "Ejemplo aproximación de raiz cuadrada de 2 con \\(y0=1\\)\nAplicando el método:\n[\n\\[\\begin{aligned}\ny_1 &= \\tfrac{1}{2}(1 + 2/1) = 1.5,\\\\[4pt]\ny_2 &= \\tfrac{1}{2}(1.5 + 2/1.5) = 1.4166,\\\\[4pt]\ny_3 &= \\tfrac{1}{2}(1.4166 + 2/1.4166) = 1.4142.\n\\end{aligned}\\]\n]\nCon solo tres iteraciones, el resultado se aproxima al valor real:\nraiz de 2 = 1.41421356\nAl elevar ( 1.4142^2 ) se obtiene aproximadamente ( 2 ), confirmando la exactitud de la aproximación.",
+    "crumbs": [
+      "Inicio",
+      "Ecuaciones en diferencia y métodos de aproximación"
+    ]
   },
   {
     "objectID": "ecuaciones-en-diferencia.html#ecuación-en-diferencia-tipo-fibonacci",
     "href": "ecuaciones-en-diferencia.html#ecuación-en-diferencia-tipo-fibonacci",
     "title": "Ecuaciones en diferencia y métodos de aproximación",
     "section": "Ecuación en diferencia tipo Fibonacci",
-    "text": "Ecuación en diferencia tipo Fibonacci\nConsideremos la ecuación en diferencia:\n\\[\ny_{n+2} - y_{n+1} - y_n = 0,\n\\qquad y_0 = 1,\\; y_1 = 1.\n\\]\nSu polinomio característico es: \\[\nr^2 - r - 1 = 0.\n\\]\nSus raíces son: \\[\nr_1 = \\frac{1 + \\sqrt{5}}{2},\n\\qquad\nr_2 = \\frac{1 - \\sqrt{5}}{2}.\n\\] Por lo tanto, la solución general es: \\[\ny_n = A\\,r_1^n + B\\,r_2^n.\n\\]\nAplicando las condiciones iniciales, se obtiene la forma cerrada de Fibonacci: \\[\ny_n = \\frac{r_1^{\\,n+1} - r_2^{\\,n+1}}{\\sqrt{5}}.\n\\]"
+    "text": "Ecuación en diferencia tipo Fibonacci\nConsideremos la ecuación en diferencia:\n\\[\ny_{n+2} - y_{n+1} - y_n = 0,\n\\qquad y_0 = 1,\\; y_1 = 1.\n\\]\nSu polinomio característico es: \\[\nr^2 - r - 1 = 0.\n\\]\nSus raíces son: \\[\nr_1 = \\frac{1 + \\sqrt{5}}{2},\n\\qquad\nr_2 = \\frac{1 - \\sqrt{5}}{2}.\n\\] Por lo tanto, la solución general es: \\[\ny_n = A\\,r_1^n + B\\,r_2^n.\n\\]\nAplicando las condiciones iniciales, se obtiene la forma cerrada de Fibonacci: \\[\ny_n = \\frac{r_1^{\\,n+1} - r_2^{\\,n+1}}{\\sqrt{5}}.\n\\]",
+    "crumbs": [
+      "Inicio",
+      "Ecuaciones en diferencia y métodos de aproximación"
+    ]
   },
   {
     "objectID": "ecuaciones-en-diferencia.html#método-general-para-ecuaciones-en-diferencia-lineales-con-coeficientes-constantes",
     "href": "ecuaciones-en-diferencia.html#método-general-para-ecuaciones-en-diferencia-lineales-con-coeficientes-constantes",
     "title": "Ecuaciones en diferencia y métodos de aproximación",
     "section": "Método general para ecuaciones en diferencia lineales con coeficientes constantes",
-    "text": "Método general para ecuaciones en diferencia lineales con coeficientes constantes\nPara una ecuación de orden (k): \\[\na_k y_{n+k} + a_{k-1} y_{n+k-1} + \\dots + a_0 y_n = g(n),\n\\]\nlos pasos generales son:\n\nPlantear la ecuación característica (caso homogéneo ( g(n) = 0 )).\n\nEncontrar las raíces del polinomio y su multiplicidad.\n\nFormar la solución homogénea según el tipo de raíces (reales, repetidas o complejas).\n\nProponer una solución particular dependiendo de ( g(n) ).\n\nSumar ambas y aplicar condiciones iniciales para determinar las constantes."
+    "text": "Método general para ecuaciones en diferencia lineales con coeficientes constantes\nPara una ecuación de orden (k): \\[\na_k y_{n+k} + a_{k-1} y_{n+k-1} + \\dots + a_0 y_n = g(n),\n\\]\nlos pasos generales son:\n\nPlantear la ecuación característica (caso homogéneo ( g(n) = 0 )).\n\nEncontrar las raíces del polinomio y su multiplicidad.\n\nFormar la solución homogénea según el tipo de raíces (reales, repetidas o complejas).\n\nProponer una solución particular dependiendo de ( g(n) ).\n\nSumar ambas y aplicar condiciones iniciales para determinar las constantes.",
+    "crumbs": [
+      "Inicio",
+      "Ecuaciones en diferencia y métodos de aproximación"
+    ]
   },
   {
     "objectID": "ecuaciones-en-diferencia.html#ejemplo-no-homogéneo",
     "href": "ecuaciones-en-diferencia.html#ejemplo-no-homogéneo",
     "title": "Ecuaciones en diferencia y métodos de aproximación",
     "section": "Ejemplo no homogéneo",
-    "text": "Ejemplo no homogéneo\n\\[\ny_{n+2} - 3y_{n+1} + 2y_n = 4^n,\n\\qquad\ny_0 = 0,\\; y_1 = 4.\n\\]\nEcuación característica: \\[\nr^2 - 3r + 2 = 0\n\\quad \\Rightarrow \\quad\nr = 1,\\; 2.\n\\]\nSolución homogénea: \\[\ny_n^{(h)} = A + B\\,2^n.\n\\]\nPropuesta particular: \\[\ny_n^{(p)} = C\\,4^n \\quad \\Rightarrow \\quad C = \\frac{1}{6}.\n\\]\nSolución general: \\[\ny_n = A + B\\,2^n + \\tfrac{1}{6}4^n.\n\\]\nDeterminando las constantes con \\(y_0\\) y \\(y_1\\), se obtiene la secuencia final."
+    "text": "Ejemplo no homogéneo\n\\[\ny_{n+2} - 3y_{n+1} + 2y_n = 4^n,\n\\qquad\ny_0 = 0,\\; y_1 = 4.\n\\]\nEcuación característica: \\[\nr^2 - 3r + 2 = 0\n\\quad \\Rightarrow \\quad\nr = 1,\\; 2.\n\\]\nSolución homogénea: \\[\ny_n^{(h)} = A + B\\,2^n.\n\\]\nPropuesta particular: \\[\ny_n^{(p)} = C\\,4^n \\quad \\Rightarrow \\quad C = \\frac{1}{6}.\n\\]\nSolución general: \\[\ny_n = A + B\\,2^n + \\tfrac{1}{6}4^n.\n\\]\nDeterminando las constantes con \\(y_0\\) y \\(y_1\\), se obtiene la secuencia final.",
+    "crumbs": [
+      "Inicio",
+      "Ecuaciones en diferencia y métodos de aproximación"
+    ]
   },
   {
     "objectID": "ecuaciones-en-diferencia.html#interpretación-computacional",
     "href": "ecuaciones-en-diferencia.html#interpretación-computacional",
     "title": "Ecuaciones en diferencia y métodos de aproximación",
     "section": "Interpretación computacional",
-    "text": "Interpretación computacional\nLas ecuaciones en diferencia pueden implementarse fácilmente en código para simular sus valores iterativos.\nEjemplo 1 — Método de Herón:\n\n\nAproximación de sqrt(2): 1.4142135623746899\n\n\nEjemplo 2 — Ecuación en diferencia no homogénea:\n\n\nSecuencia y_n: [0, 4, 13, 35, 95, 279, 903, 3175]"
+    "text": "Interpretación computacional\nLas ecuaciones en diferencia pueden implementarse fácilmente en código para simular sus valores iterativos.\nEjemplo 1 — Método de Herón:\n\n\nAproximación de sqrt(2): 1.4142135623746899\n\n\nEjemplo 2 — Ecuación en diferencia no homogénea:\n\n\nSecuencia y_n: [0, 4, 13, 35, 95, 279, 903, 3175]",
+    "crumbs": [
+      "Inicio",
+      "Ecuaciones en diferencia y métodos de aproximación"
+    ]
   },
   {
     "objectID": "ecuaciones-en-diferencia.html#conclusión",
     "href": "ecuaciones-en-diferencia.html#conclusión",
     "title": "Ecuaciones en diferencia y métodos de aproximación",
     "section": "Conclusión",
-    "text": "Conclusión\nLas ecuaciones en diferencia constituyen una herramienta fundamental para modelar procesos discretos y series temporales, con aplicaciones en economía, ingeniería y algoritmos de aprendizaje.\nEl método de Herón, por su parte, ejemplifica el poder de los procedimientos iterativos para alcanzar soluciones precisas a partir de aproximaciones iniciales simples."
+    "text": "Conclusión\nLas ecuaciones en diferencia constituyen una herramienta fundamental para modelar procesos discretos y series temporales, con aplicaciones en economía, ingeniería y algoritmos de aprendizaje.\nEl método de Herón, por su parte, ejemplifica el poder de los procedimientos iterativos para alcanzar soluciones precisas a partir de aproximaciones iniciales simples.",
+    "crumbs": [
+      "Inicio",
+      "Ecuaciones en diferencia y métodos de aproximación"
+    ]
   },
   {
     "objectID": "complejos-potenciacion-radicacion.html",
     "href": "complejos-potenciacion-radicacion.html",
     "title": "Potenciación y radicación de números complejos",
     "section": "",
-    "text": "La radicación y la potenciación de números complejos extienden las operaciones reales al plano complejo.\nEn forma polar, todo número complejo puede escribirse como \\[\nz \\;=\\; r(\\cos\\theta + i\\sin\\theta) \\;=\\; r\\,e^{i\\theta},\n\\] donde \\(r=|z|\\) es el módulo y \\(theta=arg(z)\\) es el argumento.\nEl Teorema de De Moivre establece que \\[\n(\\cos\\theta + i\\sin\\theta)^n \\;=\\; \\cos(n\\theta) + i\\sin(n\\theta),\n\\] y en forma exponencial \\[(e^{i\\theta})^n = e^{in\\theta}\\]"
+    "text": "La radicación y la potenciación de números complejos extienden las operaciones reales al plano complejo.\nEn forma polar, todo número complejo puede escribirse como \\[\nz \\;=\\; r(\\cos\\theta + i\\sin\\theta) \\;=\\; r\\,e^{i\\theta},\n\\] donde \\(r=|z|\\) es el módulo y \\(theta=arg(z)\\) es el argumento.\nEl Teorema de De Moivre establece que \\[\n(\\cos\\theta + i\\sin\\theta)^n \\;=\\; \\cos(n\\theta) + i\\sin(n\\theta),\n\\] y en forma exponencial \\[(e^{i\\theta})^n = e^{in\\theta}\\]",
+    "crumbs": [
+      "Inicio",
+      "Potenciación y radicación de números complejos"
+    ]
   },
   {
     "objectID": "complejos-potenciacion-radicacion.html#introducción",
     "href": "complejos-potenciacion-radicacion.html#introducción",
     "title": "Potenciación y radicación de números complejos",
     "section": "",
-    "text": "La radicación y la potenciación de números complejos extienden las operaciones reales al plano complejo.\nEn forma polar, todo número complejo puede escribirse como \\[\nz \\;=\\; r(\\cos\\theta + i\\sin\\theta) \\;=\\; r\\,e^{i\\theta},\n\\] donde \\(r=|z|\\) es el módulo y \\(theta=arg(z)\\) es el argumento.\nEl Teorema de De Moivre establece que \\[\n(\\cos\\theta + i\\sin\\theta)^n \\;=\\; \\cos(n\\theta) + i\\sin(n\\theta),\n\\] y en forma exponencial \\[(e^{i\\theta})^n = e^{in\\theta}\\]"
+    "text": "La radicación y la potenciación de números complejos extienden las operaciones reales al plano complejo.\nEn forma polar, todo número complejo puede escribirse como \\[\nz \\;=\\; r(\\cos\\theta + i\\sin\\theta) \\;=\\; r\\,e^{i\\theta},\n\\] donde \\(r=|z|\\) es el módulo y \\(theta=arg(z)\\) es el argumento.\nEl Teorema de De Moivre establece que \\[\n(\\cos\\theta + i\\sin\\theta)^n \\;=\\; \\cos(n\\theta) + i\\sin(n\\theta),\n\\] y en forma exponencial \\[(e^{i\\theta})^n = e^{in\\theta}\\]",
+    "crumbs": [
+      "Inicio",
+      "Potenciación y radicación de números complejos"
+    ]
   },
   {
     "objectID": "complejos-potenciacion-radicacion.html#teorema-de-de-moivre-raíces-cuartas-de-z",
     "href": "complejos-potenciacion-radicacion.html#teorema-de-de-moivre-raíces-cuartas-de-z",
     "title": "Potenciación y radicación de números complejos",
     "section": "Teorema de De Moivre (raíces cuartas de \\(z\\) )",
-    "text": "Teorema de De Moivre (raíces cuartas de \\(z\\) )\nSean \\(z=re^{i\\theta}\\) y \\(n\\in\\mathbb{N}\\). Las \\(n\\)-ésimas raíces de \\(z\\) están dadas por \\[\nw_k \\;=\\; r^{1/n}\\,e^{\\,i\\frac{\\theta+2\\pi k}{n}},\\qquad k=0,1,\\dots,n-1.\n\\] Para \\(n=4\\): \\[\nw_k \\;=\\; r^{1/4}\\,e^{\\,i\\frac{\\theta+2\\pi k}{4}},\\qquad k=0,1,2,3.\n\\]"
+    "text": "Teorema de De Moivre (raíces cuartas de \\(z\\) )\nSean \\(z=re^{i\\theta}\\) y \\(n\\in\\mathbb{N}\\). Las \\(n\\)-ésimas raíces de \\(z\\) están dadas por \\[\nw_k \\;=\\; r^{1/n}\\,e^{\\,i\\frac{\\theta+2\\pi k}{n}},\\qquad k=0,1,\\dots,n-1.\n\\] Para \\(n=4\\): \\[\nw_k \\;=\\; r^{1/4}\\,e^{\\,i\\frac{\\theta+2\\pi k}{4}},\\qquad k=0,1,2,3.\n\\]",
+    "crumbs": [
+      "Inicio",
+      "Potenciación y radicación de números complejos"
+    ]
   },
   {
     "objectID": "complejos-potenciacion-radicacion.html#aplicación-ejercicio-13",
     "href": "complejos-potenciacion-radicacion.html#aplicación-ejercicio-13",
     "title": "Potenciación y radicación de números complejos",
     "section": "Aplicación ejercicio 13:",
-    "text": "Aplicación ejercicio 13:\nSimplificación\n\\[\n(\\frac{16i}{1+i})^{1/8}\n=(\\frac{16i(1-i)}{(1+i)(1-i)})^{1/8}\n=8(1±i)^{1/8}\n\\]\nEn forma polar de \\(z\\) \\[\n1+i=\\sqrt2\\,e^{i\\pi/4}\\quad\\Rightarrow\\quad\nz=8\\sqrt2\\,e^{i\\pi/4}.\n\\]\n\\[|z|=8\\sqrt2\\quad\\Rightarrow\\quad Modulo\\] \\[z = pi/4\\quad\\Rightarrow\\quad Argumento principal\\]\nPor tanto, si \\(z=8\\sqrt2\\,e^{i\\pi/4}\\), sus ocho raices octavas son:\n\\(n=8\\)\n\\[\n\\boxed{w_k= (8\\sqrt2)^{1/8}\\,e^{\\,i\\left(\\frac{\\pi}{32}+\\frac{k\\pi}{4}\\right)},\n\\qquad k=0,1,\\dots,7.}\n\\]\nComo \\((8\\sqrt2)^{1/8}=2^{7/16}\\), el radio comun es: \\[\n\\boxed{\\,w_k=2^{7/16}\\Big[\\cos\\!\\Big(\\tfrac{\\pi}{32}+\\tfrac{k\\pi}{4}\\Big)\n+i\\sin\\!\\Big(\\tfrac{\\pi}{32}+\\tfrac{k\\pi}{4}\\Big)\\Big],\\;k=0,\\ldots,7.}\n\\]"
+    "text": "Aplicación ejercicio 13:\nSimplificación\n\\[\n(\\frac{16i}{1+i})^{1/8}\n=(\\frac{16i(1-i)}{(1+i)(1-i)})^{1/8}\n=8(1±i)^{1/8}\n\\]\nEn forma polar de \\(z\\) \\[\n1+i=\\sqrt2\\,e^{i\\pi/4}\\quad\\Rightarrow\\quad\nz=8\\sqrt2\\,e^{i\\pi/4}.\n\\]\n\\[|z|=8\\sqrt2\\quad\\Rightarrow\\quad Modulo\\] \\[z = pi/4\\quad\\Rightarrow\\quad Argumento principal\\]\nPor tanto, si \\(z=8\\sqrt2\\,e^{i\\pi/4}\\), sus ocho raices octavas son:\n\\(n=8\\)\n\\[\n\\boxed{w_k= (8\\sqrt2)^{1/8}\\,e^{\\,i\\left(\\frac{\\pi}{32}+\\frac{k\\pi}{4}\\right)},\n\\qquad k=0,1,\\dots,7.}\n\\]\nComo \\((8\\sqrt2)^{1/8}=2^{7/16}\\), el radio comun es: \\[\n\\boxed{\\,w_k=2^{7/16}\\Big[\\cos\\!\\Big(\\tfrac{\\pi}{32}+\\tfrac{k\\pi}{4}\\Big)\n+i\\sin\\!\\Big(\\tfrac{\\pi}{32}+\\tfrac{k\\pi}{4}\\Big)\\Big],\\;k=0,\\ldots,7.}\n\\]",
+    "crumbs": [
+      "Inicio",
+      "Potenciación y radicación de números complejos"
+    ]
   },
   {
     "objectID": "complejos-potenciacion-radicacion.html#raíz-cuarta-principal",
     "href": "complejos-potenciacion-radicacion.html#raíz-cuarta-principal",
     "title": "Potenciación y radicación de números complejos",
     "section": "Raíz cuarta principal",
-    "text": "Raíz cuarta principal\nLa raíz principal se obtiene con el argumento principal \\({Arg}(z)\\) y \\(k=0\\): \\[\n\\sqrt[4]{z}\\;=\\; r^{1/4}\\,e^{\\,i\\,\\operatorname{Arg}(z)/4}, \\qquad z = r e^{i\\theta}.\n\\]\nRaiz principal \\[k = 0\\]\nPara el anterior ejercicio, \\[\nw_0=2^{7/16}{e^{i\\frac{\\pi}{32}}}\\approx 1.349+0.133i.\n\\] Las demás raíces se obtienen rotando sucesivamente \\(45°\\) (es decir, sumando \\({\\pi/4}\\) al angulo) alrededor del circulo de radio \\(2^{7/16}\\)."
+    "text": "Raíz cuarta principal\nLa raíz principal se obtiene con el argumento principal \\({Arg}(z)\\) y \\(k=0\\): \\[\n\\sqrt[4]{z}\\;=\\; r^{1/4}\\,e^{\\,i\\,\\operatorname{Arg}(z)/4}, \\qquad z = r e^{i\\theta}.\n\\]\nRaiz principal \\[k = 0\\]\nPara el anterior ejercicio, \\[\nw_0=2^{7/16}{e^{i\\frac{\\pi}{32}}}\\approx 1.349+0.133i.\n\\] Las demás raíces se obtienen rotando sucesivamente \\(45°\\) (es decir, sumando \\({\\pi/4}\\) al angulo) alrededor del circulo de radio \\(2^{7/16}\\).",
+    "crumbs": [
+      "Inicio",
+      "Potenciación y radicación de números complejos"
+    ]
   },
   {
     "objectID": "complejos-potenciacion-radicacion.html#aproximaciones-numéricas",
     "href": "complejos-potenciacion-radicacion.html#aproximaciones-numéricas",
     "title": "Potenciación y radicación de números complejos",
     "section": "Aproximaciones numéricas",
-    "text": "Aproximaciones numéricas\nPor aritmética de punto flotante, \\(w_k^4\\) no es exactamente \\(z\\). El residuo \\(|w_k^4 - z|\\) debe ser pequeño.\nPara el ejemplo anterior, todas las raíces están sobre el círculo de centro \\((0,0)\\) y radio \\(r=1.3543\\), formando un octagono regular. El primer punto esta en el angulo \\({\\pi}/32  (\\approx 5.625°)\\) y luego vas sumando \\({\\pi}/4\\)\nCoordenadas aproximadas (para trazar)\n\n\nz = (8+8j)  |z|=11.313708  arg(z)=0.785398 rad\n\n| k |  Real (Wk) | Imaginario |\n| 0 |    +1.3477 |    +0.1327 |\n| 1 |    +0.8591 |    +1.0469 |\n| 2 |    −0.1327 |    +1.3477 |\n| 3 |    −1.0469 |    +0.8591 |\n| 4 |    −1.3477 |    −0.1327 |\n| 5 |    −0.8591 |    −1.0469 |\n| 6 |    +0.1327 |    −1.3477 |\n| 7 |    +1.0469 |    −0.8591 |"
+    "text": "Aproximaciones numéricas\nPor aritmética de punto flotante, \\(w_k^4\\) no es exactamente \\(z\\). El residuo \\(|w_k^4 - z|\\) debe ser pequeño.\nPara el ejemplo anterior, todas las raíces están sobre el círculo de centro \\((0,0)\\) y radio \\(r=1.3543\\), formando un octagono regular. El primer punto esta en el angulo \\({\\pi}/32  (\\approx 5.625°)\\) y luego vas sumando \\({\\pi}/4\\)\nCoordenadas aproximadas (para trazar)\n\n\nz = (8+8j)  |z|=11.313708  arg(z)=0.785398 rad\n\n| k |  Real (Wk) | Imaginario |\n| 0 |    +1.3477 |    +0.1327 |\n| 1 |    +0.8591 |    +1.0469 |\n| 2 |    −0.1327 |    +1.3477 |\n| 3 |    −1.0469 |    +0.8591 |\n| 4 |    −1.3477 |    −0.1327 |\n| 5 |    −0.8591 |    −1.0469 |\n| 6 |    +0.1327 |    −1.3477 |\n| 7 |    +1.0469 |    −0.8591 |",
+    "crumbs": [
+      "Inicio",
+      "Potenciación y radicación de números complejos"
+    ]
   },
   {
     "objectID": "complejos-potenciacion-radicacion.html#grafica-de-raices",
     "href": "complejos-potenciacion-radicacion.html#grafica-de-raices",
     "title": "Potenciación y radicación de números complejos",
     "section": "Grafica de raices",
-    "text": "Grafica de raices"
+    "text": "Grafica de raices",
+    "crumbs": [
+      "Inicio",
+      "Potenciación y radicación de números complejos"
+    ]
   },
   {
     "objectID": "ecuaciones-logisticas.html",
     "href": "ecuaciones-logisticas.html",
     "title": "Ecuaciones logísticas y dinámica poblacional",
     "section": "",
-    "text": "El modelo logístico discreto describe la evolución de una población que crece con una tasa limitada por la competencia interna.\nLa ecuación básica es: \\[\nx_{n+1} = r\\,x_n(1 - x_n)\n\\]\ndonde: - \\(x_n\\): población normalizada (entre 0 y 1), - \\(r\\): parámetro de crecimiento o tasa de reproducción, - \\(x_{n+1}\\): población en el siguiente período.\nEste modelo capta cómo una población aumenta rápidamente al principio, pero se estabiliza cuando se acerca al límite de recursos.\nFue propuesto originalmente por Pierre-François Verhulst (1845) y es un ejemplo clásico de modelo no lineal discreto."
+    "text": "El modelo logístico discreto describe la evolución de una población que crece con una tasa limitada por la competencia interna.\nLa ecuación básica es: \\[\nx_{n+1} = r\\,x_n(1 - x_n)\n\\]\ndonde: - \\(x_n\\): población normalizada (entre 0 y 1), - \\(r\\): parámetro de crecimiento o tasa de reproducción, - \\(x_{n+1}\\): población en el siguiente período.\nEste modelo capta cómo una población aumenta rápidamente al principio, pero se estabiliza cuando se acerca al límite de recursos.\nFue propuesto originalmente por Pierre-François Verhulst (1845) y es un ejemplo clásico de modelo no lineal discreto.",
+    "crumbs": [
+      "Inicio",
+      "Ecuaciones logísticas y dinámica poblacional"
+    ]
   },
   {
     "objectID": "ecuaciones-logisticas.html#introducción-al-modelo-logístico-discreto",
     "href": "ecuaciones-logisticas.html#introducción-al-modelo-logístico-discreto",
     "title": "Ecuaciones logísticas y dinámica poblacional",
     "section": "",
-    "text": "El modelo logístico discreto describe la evolución de una población que crece con una tasa limitada por la competencia interna.\nLa ecuación básica es: \\[\nx_{n+1} = r\\,x_n(1 - x_n)\n\\]\ndonde: - \\(x_n\\): población normalizada (entre 0 y 1), - \\(r\\): parámetro de crecimiento o tasa de reproducción, - \\(x_{n+1}\\): población en el siguiente período.\nEste modelo capta cómo una población aumenta rápidamente al principio, pero se estabiliza cuando se acerca al límite de recursos.\nFue propuesto originalmente por Pierre-François Verhulst (1845) y es un ejemplo clásico de modelo no lineal discreto."
+    "text": "El modelo logístico discreto describe la evolución de una población que crece con una tasa limitada por la competencia interna.\nLa ecuación básica es: \\[\nx_{n+1} = r\\,x_n(1 - x_n)\n\\]\ndonde: - \\(x_n\\): población normalizada (entre 0 y 1), - \\(r\\): parámetro de crecimiento o tasa de reproducción, - \\(x_{n+1}\\): población en el siguiente período.\nEste modelo capta cómo una población aumenta rápidamente al principio, pero se estabiliza cuando se acerca al límite de recursos.\nFue propuesto originalmente por Pierre-François Verhulst (1845) y es un ejemplo clásico de modelo no lineal discreto.",
+    "crumbs": [
+      "Inicio",
+      "Ecuaciones logísticas y dinámica poblacional"
+    ]
   },
   {
     "objectID": "ecuaciones-logisticas.html#modelo-logístico-de-la-población-de-conejos",
     "href": "ecuaciones-logisticas.html#modelo-logístico-de-la-población-de-conejos",
     "title": "Ecuaciones logísticas y dinámica poblacional",
     "section": "Modelo logístico de la población de conejos",
-    "text": "Modelo logístico de la población de conejos\nSupongamos una población de conejos en un ambiente con recursos limitados.\nSi \\(x_n\\) representa la proporción de conejos respecto a la capacidad máxima del entorno y \\(r\\) es la tasa de crecimiento, la evolución está dada por:\n\\[\nx_{n+1} = r\\,x_n(1 - x_n)\n\\]\nEste modelo genera distintos comportamientos dependiendo del valor de \\(r\\): - Si \\(r &lt; 1\\): la población desaparece (tiende a 0). - Si \\(1 &lt; r &lt; 3\\): la población se estabiliza en un valor fijo. - Si \\(3 &lt; r &lt; 3.57\\): aparecen ciclos de período 2, 4, 8, etc. - Si \\(r &gt; 3.57\\): la población entra en caos."
+    "text": "Modelo logístico de la población de conejos\nSupongamos una población de conejos en un ambiente con recursos limitados.\nSi \\(x_n\\) representa la proporción de conejos respecto a la capacidad máxima del entorno y \\(r\\) es la tasa de crecimiento, la evolución está dada por:\n\\[\nx_{n+1} = r\\,x_n(1 - x_n)\n\\]\nEste modelo genera distintos comportamientos dependiendo del valor de \\(r\\): - Si \\(r &lt; 1\\): la población desaparece (tiende a 0). - Si \\(1 &lt; r &lt; 3\\): la población se estabiliza en un valor fijo. - Si \\(3 &lt; r &lt; 3.57\\): aparecen ciclos de período 2, 4, 8, etc. - Si \\(r &gt; 3.57\\): la población entra en caos.",
+    "crumbs": [
+      "Inicio",
+      "Ecuaciones logísticas y dinámica poblacional"
+    ]
   },
   {
     "objectID": "ecuaciones-logisticas.html#implementación-en-python-del-modelo-de-conejos",
     "href": "ecuaciones-logisticas.html#implementación-en-python-del-modelo-de-conejos",
     "title": "Ecuaciones logísticas y dinámica poblacional",
     "section": "Implementación en Python del modelo de conejos",
-    "text": "Implementación en Python del modelo de conejos\n\n\n\n\n\n\n\n\n\nInterpretación:\n- Para (r=2.5), la población converge a un valor estable.\n- Para (r=3.2), oscila entre dos niveles.\n- Para (r=3.9), el comportamiento es caótico."
+    "text": "Implementación en Python del modelo de conejos\n\n\n\n\n\n\n\n\n\nInterpretación:\n- Para (r=2.5), la población converge a un valor estable.\n- Para (r=3.2), oscila entre dos niveles.\n- Para (r=3.9), el comportamiento es caótico.",
+    "crumbs": [
+      "Inicio",
+      "Ecuaciones logísticas y dinámica poblacional"
+    ]
   },
   {
     "objectID": "ecuaciones-logisticas.html#evolución-temporal-y-sensibilidad-a-las-condiciones-iniciales",
     "href": "ecuaciones-logisticas.html#evolución-temporal-y-sensibilidad-a-las-condiciones-iniciales",
     "title": "Ecuaciones logísticas y dinámica poblacional",
     "section": "Evolución temporal y sensibilidad a las condiciones iniciales",
-    "text": "Evolución temporal y sensibilidad a las condiciones iniciales\nEl modelo presenta sensibilidad a las condiciones iniciales:\nsi \\((x_0 = 0.2000)\\) y \\((x_0' = 0.2001)\\), la diferencia entre ambas trayectorias puede crecer exponencialmente para valores altos de \\(r\\).\nEsta propiedad es una característica del caos determinista, donde el sistema sigue una regla exacta pero el resultado se vuelve impredecible."
+    "text": "Evolución temporal y sensibilidad a las condiciones iniciales\nEl modelo presenta sensibilidad a las condiciones iniciales:\nsi \\((x_0 = 0.2000)\\) y \\((x_0' = 0.2001)\\), la diferencia entre ambas trayectorias puede crecer exponencialmente para valores altos de \\(r\\).\nEsta propiedad es una característica del caos determinista, donde el sistema sigue una regla exacta pero el resultado se vuelve impredecible.",
+    "crumbs": [
+      "Inicio",
+      "Ecuaciones logísticas y dinámica poblacional"
+    ]
   },
   {
     "objectID": "ecuaciones-logisticas.html#diagrama-de-telaraña-cobweb-plot",
     "href": "ecuaciones-logisticas.html#diagrama-de-telaraña-cobweb-plot",
     "title": "Ecuaciones logísticas y dinámica poblacional",
     "section": "Diagrama de telaraña (Cobweb plot)",
-    "text": "Diagrama de telaraña (Cobweb plot)\nEl diagrama de telaraña permite visualizar gráficamente la evolución de la población:\n\nSe dibuja la curva \\(y = r\\,x(1 - x)\\) y la recta \\(y = x\\).\nSe parte desde un punto inicial \\(x_0\\).\nSe sube a la curva (para obtener \\(x_1\\)) y luego se proyecta a la recta identidad (para regresar al eje x).\nRepitiendo el proceso se genera una figura que muestra cómo evoluciona la población.\n\nInterpretación:\n- Si el trazado converge al punto fijo, el sistema es estable.\n- Si alterna entre varios valores, existe un ciclo periódico.\n- Si no hay patrón repetido, el sistema es caótico."
+    "text": "Diagrama de telaraña (Cobweb plot)\nEl diagrama de telaraña permite visualizar gráficamente la evolución de la población:\n\nSe dibuja la curva \\(y = r\\,x(1 - x)\\) y la recta \\(y = x\\).\nSe parte desde un punto inicial \\(x_0\\).\nSe sube a la curva (para obtener \\(x_1\\)) y luego se proyecta a la recta identidad (para regresar al eje x).\nRepitiendo el proceso se genera una figura que muestra cómo evoluciona la población.\n\nInterpretación:\n- Si el trazado converge al punto fijo, el sistema es estable.\n- Si alterna entre varios valores, existe un ciclo periódico.\n- Si no hay patrón repetido, el sistema es caótico.",
+    "crumbs": [
+      "Inicio",
+      "Ecuaciones logísticas y dinámica poblacional"
+    ]
   },
   {
     "objectID": "ecuaciones-logisticas.html#diagrama-de-bifurcación",
     "href": "ecuaciones-logisticas.html#diagrama-de-bifurcación",
     "title": "Ecuaciones logísticas y dinámica poblacional",
     "section": "Diagrama de bifurcación",
-    "text": "Diagrama de bifurcación\nEl diagrama de bifurcación muestra el comportamiento de largo plazo de la ecuación logística al variar el parámetro \\(r\\).\nPara cada valor de \\(r\\), se calculan muchas iteraciones y se grafican los valores finales de \\(x_n\\).\n\n\\(r &lt; 1\\): la población muere.\n\\(1 &lt; r &lt; 3\\): la población se estabiliza.\n\\(3 &lt; r &lt; 3.57\\): se duplican los períodos (2, 4, 8…).\n\\(r &gt; 3.57\\): el sistema entra en caos.\n\nLa secuencia de duplicaciones de período obedece a la constante de Feigenbaum (\\(\\delta \\approx 4.6692\\)), que describe la relación entre los intervalos sucesivos de bifurcación."
+    "text": "Diagrama de bifurcación\nEl diagrama de bifurcación muestra el comportamiento de largo plazo de la ecuación logística al variar el parámetro \\(r\\).\nPara cada valor de \\(r\\), se calculan muchas iteraciones y se grafican los valores finales de \\(x_n\\).\n\n\\(r &lt; 1\\): la población muere.\n\\(1 &lt; r &lt; 3\\): la población se estabiliza.\n\\(3 &lt; r &lt; 3.57\\): se duplican los períodos (2, 4, 8…).\n\\(r &gt; 3.57\\): el sistema entra en caos.\n\nLa secuencia de duplicaciones de período obedece a la constante de Feigenbaum (\\(\\delta \\approx 4.6692\\)), que describe la relación entre los intervalos sucesivos de bifurcación.",
+    "crumbs": [
+      "Inicio",
+      "Ecuaciones logísticas y dinámica poblacional"
+    ]
   },
   {
     "objectID": "ecuaciones-logisticas.html#ejemplos-de-comportamiento-según-el-valor-de-r",
     "href": "ecuaciones-logisticas.html#ejemplos-de-comportamiento-según-el-valor-de-r",
     "title": "Ecuaciones logísticas y dinámica poblacional",
     "section": "Ejemplos de comportamiento según el valor de \\(r\\)",
-    "text": "Ejemplos de comportamiento según el valor de \\(r\\)\n\n\n\nValor de \\(r\\)\nTipo de comportamiento\nDescripción breve\n\n\n\n\n2.5\nEstable\nConvergencia a punto fijo \\(x^* = 1 - 1/r = 0.6\\).\n\n\n3.2\nPeríodo 2\nAlternancia entre dos valores.\n\n\n3.5\nPeríodo 4 o 8\nCiclo de mayor complejidad.\n\n\n3.9\nCaótico\nTrayectorias impredecibles y sensibles a \\(x_0\\)."
+    "text": "Ejemplos de comportamiento según el valor de \\(r\\)\n\n\n\nValor de \\(r\\)\nTipo de comportamiento\nDescripción breve\n\n\n\n\n2.5\nEstable\nConvergencia a punto fijo \\(x^* = 1 - 1/r = 0.6\\).\n\n\n3.2\nPeríodo 2\nAlternancia entre dos valores.\n\n\n3.5\nPeríodo 4 o 8\nCiclo de mayor complejidad.\n\n\n3.9\nCaótico\nTrayectorias impredecibles y sensibles a \\(x_0\\).",
+    "crumbs": [
+      "Inicio",
+      "Ecuaciones logísticas y dinámica poblacional"
+    ]
   },
   {
     "objectID": "ecuaciones-logisticas.html#relación-con-el-algoritmo-de-shor-y-periodicidad",
     "href": "ecuaciones-logisticas.html#relación-con-el-algoritmo-de-shor-y-periodicidad",
     "title": "Ecuaciones logísticas y dinámica poblacional",
     "section": "Relación con el algoritmo de Shor y periodicidad",
-    "text": "Relación con el algoritmo de Shor y periodicidad\nEl algoritmo de Shor (usado en computación cuántica para factorización) busca el período de una función modular:\n\\[\nf(a) = r^a \\bmod N\n\\]\ndonde \\(N\\) es el número a factorizar y \\(r\\) es una base coprima con \\(N\\).\nEl algoritmo halla el período \\(p\\) tal que:\n\\[\nr^{p} \\equiv 1 \\pmod{N}\n\\]\ny usa esa periodicidad para obtener los factores primos de \\(N\\).\nDe forma conceptual, esto se asemeja al comportamiento periódico del mapa logístico antes del caos: ambos sistemas repiten estados o patrones cada cierto número de iteraciones."
+    "text": "Relación con el algoritmo de Shor y periodicidad\nEl algoritmo de Shor (usado en computación cuántica para factorización) busca el período de una función modular:\n\\[\nf(a) = r^a \\bmod N\n\\]\ndonde \\(N\\) es el número a factorizar y \\(r\\) es una base coprima con \\(N\\).\nEl algoritmo halla el período \\(p\\) tal que:\n\\[\nr^{p} \\equiv 1 \\pmod{N}\n\\]\ny usa esa periodicidad para obtener los factores primos de \\(N\\).\nDe forma conceptual, esto se asemeja al comportamiento periódico del mapa logístico antes del caos: ambos sistemas repiten estados o patrones cada cierto número de iteraciones.",
+    "crumbs": [
+      "Inicio",
+      "Ecuaciones logísticas y dinámica poblacional"
+    ]
   },
   {
     "objectID": "ecuaciones-logisticas.html#resumen-conceptual",
     "href": "ecuaciones-logisticas.html#resumen-conceptual",
     "title": "Ecuaciones logísticas y dinámica poblacional",
     "section": "Resumen conceptual",
-    "text": "Resumen conceptual\n\nLa ecuación logística discreta modela crecimiento poblacional con saturación.\nAl aumentar \\(r\\), el sistema pasa de la estabilidad al caos.\nEl diagrama de bifurcación muestra esta transición por duplicaciones de período.\nEl diagrama de telaraña ilustra la convergencia, ciclos y caos.\nEl caos determinista aparece para valores altos de \\(r\\), donde pequeñas variaciones iniciales producen grandes diferencias.\nLa búsqueda de periodicidad en sistemas como el logístico conecta con conceptos del algoritmo de Shor, que también se basa en la detección de períodos en funciones modulares."
+    "text": "Resumen conceptual\n\nLa ecuación logística discreta modela crecimiento poblacional con saturación.\nAl aumentar \\(r\\), el sistema pasa de la estabilidad al caos.\nEl diagrama de bifurcación muestra esta transición por duplicaciones de período.\nEl diagrama de telaraña ilustra la convergencia, ciclos y caos.\nEl caos determinista aparece para valores altos de \\(r\\), donde pequeñas variaciones iniciales producen grandes diferencias.\nLa búsqueda de periodicidad en sistemas como el logístico conecta con conceptos del algoritmo de Shor, que también se basa en la detección de períodos en funciones modulares.",
+    "crumbs": [
+      "Inicio",
+      "Ecuaciones logísticas y dinámica poblacional"
+    ]
   }
 ]
